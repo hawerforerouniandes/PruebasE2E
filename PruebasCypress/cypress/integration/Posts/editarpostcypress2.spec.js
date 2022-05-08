@@ -1,17 +1,21 @@
 describe('Testing positivo editar post', () => {
-    beforeEach(()=>{
-       cy.visit('http://localhost:2368/ghost/#/signin')
-        cy.wait(3000)
+    beforeEach(() => {
+        cy.fixture('admin').as('adminData')
+        cy.fixture('site').then((siteData) => {
+            cy.visit(siteData.url)
+        })
     })
 
-    it('Editar post', ()=>{
+    it('Editar post', () => {
 
-        //Login
-        cy.get("#ember8").type("h.foreror@uniandes.edu.co");
-        cy.get("#ember10").type("admin12345");
-        cy.wait(1000);
-        cy.get("#ember12").click();
-        cy.wait(1000);
+        // Login
+        cy.get('@adminData')
+            .then(adminData => {
+                //Login
+                cy.get('[type="email"]').type(adminData.email);
+                cy.get('[type="password"]').type(adminData.password);
+                cy.get('[type="submit"]').click();
+            })
 
         //Open dashboard
         cy.url().should("include", "/site");
@@ -46,11 +50,11 @@ describe('Testing positivo editar post', () => {
         cy.contains("Publish").click();
         cy.get('button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').click()
         cy.wait(500);
-        cy.get('.gh-alert-content').then(($div)=>{
+        cy.get('.gh-alert-content').then(($div) => {
             expect($div).to.exist
-        })  
+        })
         cy.wait(500);
 
     })
 
-  })
+})

@@ -2,8 +2,10 @@ const { faker } = require('@faker-js/faker');
 
 describe('Tests case creación de tags', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:2368/ghost/#/signin')
         cy.fixture('admin').as('adminData')
+        cy.fixture('site').then((siteData) => {
+            cy.visit(siteData.url)
+        })
     })
 
     it('Crear Tag', () => {
@@ -11,6 +13,7 @@ describe('Tests case creación de tags', () => {
         const tagColor = faker.internet.color().replace('#', '');
         const testDescription = faker.lorem.paragraph();
 
+        // Login
         cy.get('@adminData')
             .then(adminData => {
                 //Login

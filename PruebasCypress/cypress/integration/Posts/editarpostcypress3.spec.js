@@ -1,17 +1,21 @@
 describe('Testing positivo editar post', () => {
-    beforeEach(()=>{
-       cy.visit('http://localhost:2368/ghost/#/signin')
-        cy.wait(3000)
+    beforeEach(() => {
+        cy.fixture('admin').as('adminData')
+        cy.fixture('site').then((siteData) => {
+            cy.visit(siteData.url)
+        })
     })
 
-    it('Editar post', ()=>{
+    it('Editar post', () => {
 
-        //Login
-        cy.get("#ember8").type("h.foreror@uniandes.edu.co");
-        cy.get("#ember10").type("admin12345");
-        cy.wait(1000);
-        cy.get("#ember12").click();
-        cy.wait(1000);
+        // Login
+        cy.get('@adminData')
+            .then(adminData => {
+                //Login
+                cy.get('[type="email"]').type(adminData.email);
+                cy.get('[type="password"]').type(adminData.password);
+                cy.get('[type="submit"]').click();
+            })
 
         //Open dashboard
         cy.url().should("include", "/site");
@@ -41,15 +45,15 @@ describe('Testing positivo editar post', () => {
         body = cy.get("body");
         body.find("textarea").first().type(" con video de youtube");
         cy.wait(500);
-        cy.get('.koenig-editor__editor').click({force:true})
+        cy.get('.koenig-editor__editor').click({ force: true })
         cy.wait(500);
 
         //Agregar recurso video
-        cy.get('.koenig-plus-menu-button').first().click({force:true})
+        cy.get('.koenig-plus-menu-button').first().click({ force: true })
         cy.wait(500);
-        cy.get('[title="YouTube"] > .flex-column > .f8').click({force:true})
+        cy.get('[title="YouTube"] > .flex-column > .f8').click({ force: true })
         cy.wait(500);
-        cy.get('input[name=url]').click({force:true})		
+        cy.get('input[name=url]').click({ force: true })
         cy.wait(500);
         cy.get('input[name=url]').type("https://www.youtube.com/watch?v=yuyD7rvDP8I")
         cy.wait(500);
@@ -63,10 +67,10 @@ describe('Testing positivo editar post', () => {
 
         //Vidualizar
         cy.wait(500);
-        cy.get('.koenig-embed-video').then(($div)=>{
+        cy.get('.koenig-embed-video').then(($div) => {
             expect($div).to.exist
-        })  
+        })
 
     })
 
-  })
+})
