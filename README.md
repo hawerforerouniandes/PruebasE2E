@@ -5,12 +5,13 @@
 - Jhon Sebastian Bohorquez Guerrero
 
 # Descripción de escenarios
-| Descripción                        |  Cypress |Kraken | Responsable |
-|------------------------------------|------------------|-------------|-----|
-| Escenario positivo con el objetivo de realizar login, crear, editar y previsualizar un post  |  editarpostcypress1.spec.js |editarpostcypress1.feature|Hawer Alberto Forero Rey| 
-| Escenario negativo con el objetivo de  realizar login, crear y editar post con título de mas de 255 caracteres  |  editarpostcypress2.spec.js |editarpostcypress2.feature|Hawer Alberto Forero Rey| 
-| Escenario positivo con el objetivo de realizar login, crear, editar y publicar agrregando recursos externos de youtube un post  |  editarpostcypress3.spec.js |editarpostcypress3.feature|Hawer Alberto Forero Rey| 
-| Escenario positivo con el objetivo de realizar login, crear y asignar un tag a un post correspondiente |  creartagcypress1.spec.js |creartagcypress1.feature|Hawer Alberto Forero Rey| 
+|                                                                       Descripción                                                                        |          Cypress           |           Kraken           |        Responsable        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------- | ------------------------- |
+| Escenario positivo con el objetivo de realizar login, crear, editar y previsualizar un post                                                              | editarpostcypress1.spec.js | editarpostcypress1.feature | Hawer Alberto Forero Rey  |
+| Escenario negativo con el objetivo de realizar login, crear y editar post con título de mas de 255 caracteres                                            | editarpostcypress2.spec.js | editarpostcypress2.feature | Hawer Alberto Forero Rey  |
+| Escenario positivo con el objetivo de realizar login, crear, editar y publicar agrregando recursos externos de youtube un post                           | editarpostcypress3.spec.js | editarpostcypress3.feature | Hawer Alberto Forero Rey  |
+| Escenario positivo con el objetivo de realizar login, crear y asignar un tag a un post correspondiente                                                   | creartagcypress1.spec.js   | creartagcypress1.feature   | Hawer Alberto Forero Rey  |
+| Escenario positivo con el objetivo de realizar login, crear un tag con datos aleatorios, validando que la cuenta aumente al salvar los cambios en el tag | createTagCrypess1.spec     |                            | John Edwin Guerrero Ayala |
 
 # Configuración de herramientas
 ## Ghost
@@ -22,9 +23,13 @@
 - Crear un workspace personal y en la raiz ejecutar el siguiente comando
   ```npm install -g cypress ```
 - Ubicarse en el directorio donde se instalo cypress y ejecutar 
-  ```mpm install cypress --save-dev ```
+  ```npm install cypress --save-dev ```
 - En el directorio  ```integration``` copiar los escenarios ubicados en ```PruebasCypress``` de este repositorio
 - Abrir el dashboard de ejecución  ```$(npm bin)/cypress open``` 
+
+### Condiciones iniciales para pruebas ###
+* Actualizar el archivo ```fixture/admin.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas
+
 ## Kraken
 - Instalar ```npm install kraken-node -g```
 - Crear un workspace personal y en la raiz ejecutar el siguiente comando
