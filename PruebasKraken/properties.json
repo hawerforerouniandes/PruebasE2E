@@ -2,6 +2,7 @@
     "EMAIL": "h.foreror@uniandes.edu.co",
     "PASSWORD": "admin12345",
     "TITLE": "Nuevo post",
-    "TITLE_ALTER": "Nuevo post edit"
+    "TITLE_ALTER": "Nuevo post edit",
+    "TITLE_255": "Pruebas automatizadas de software, de la Universidad de los Andes. Asegurar la calidad del software es una labor de alta importancia para los equipos de desarrollo, dado que el costo de una falla en el software va más allá de la pérdida de confort al usar un sistema."
 }
 

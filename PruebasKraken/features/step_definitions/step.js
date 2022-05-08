@@ -40,5 +40,14 @@ When('I click preview', async function() {
     return await element.click();
 })
 
+When('I click menu publish', async function() {
+    let element = await this.driver.$('.gh-publishmenu.ember-view');
+    return await element.click();
+})
+
+When('I click publish', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view');
+    return await element.click();
+})
 
 
