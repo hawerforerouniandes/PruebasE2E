@@ -1,7 +1,7 @@
 {
-
     "EMAIL": "h.foreror@uniandes.edu.co",
     "PASSWORD": "admin12345",
-    "TITLE": "NUEVO POST"
+    "TITLE": "Nuevo post",
+    "TITLE_ALTER": "Nuevo post edit"
 }
 

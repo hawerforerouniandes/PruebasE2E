@@ -29,9 +29,16 @@ When('I click create post', async function() {
     let element = await this.driver.$('.gh-koenig-editor-pane');
     return await element.click();
 })
-When('I click post edit', async function() {
-    let element = await this.driver.$("h3[aria-label='Nuevo post']");
+
+When('I click post edit {kraken-string}', async function(title) {
+    let element = await this.driver.$('a[title="Edit this post"]');
     return await element.click();
 })
+
+When('I click preview', async function() {
+    let element = await this.driver.$('.post-view-link');
+    return await element.click();
+})
+
 
 
