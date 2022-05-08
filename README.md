@@ -5,6 +5,6 @@
 - Jhon Sebastian Bohorquez Guerrero
 
 # Descripción de escenarios
-| Descripción                        | Responsable      |  Cypress |Kraken |
+| Nombre                        | Responsable      |  Cypress |Kraken |Descripción |
 |------------------------------------|------------------|-------------|-----|
-| Escenario positivo editar post  | Hawer Forero |  editarpostcypress1.spec.js | |
+| Escenario positivo editar post  | @hawerforerouniandes |  editarpostcypress1.spec.js |Escenario que prueba desde el inicio de sesión, creación de un nuevo post, selección del post hasta la edición del nombre y su posterior publicación de manera exitosa.|
