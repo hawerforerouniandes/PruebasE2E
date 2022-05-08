@@ -20,4 +20,5 @@
 ## Cypress
 - Crear un workspace personal y en la raiz ejecutar el siguiente comando
   ```npm install -g cypress ```
-- Ubicarse en el directorio donde se instalo cypress 
+- Ubicarse en el directorio donde se instalo cypress y ejecutar 
+  ```mpm install cypress --save-dev ```
