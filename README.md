@@ -7,4 +7,4 @@
 # Descripción de escenarios
 | Descripción                        | Responsable      |  Cypress |Kraken |
 |------------------------------------|------------------|-------------|-----|
-| Escenario positivo editar post  | @hawerforerouniandes |  editarpostcypress1.spec.js |editarpostcypress1.feature|
+| Escenario positivo login, crear, editar y previsualizar un post | @hawerforerouniandes |  editarpostcypress1.spec.js |editarpostcypress1.feature|
