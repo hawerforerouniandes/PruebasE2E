@@ -13,7 +13,11 @@
 
 # Configuración de herramientas
 ## Ghost
-- Crear un directorio nuevo y en la raiz ejecutar el siguiente comando
+- Crear un workspace personal y en la raiz ejecutar el siguiente comando
   ```ghost install 3.41.1 local --force ```
-- Ubicarse en el directorio donde se instalo el ghost y ejecutar
+- Ubicarse en el directorio donde se instalo ghost y ejecutar
  ```cypress open ```
+## Cypress
+- Crear un workspace personal y en la raiz ejecutar el siguiente comando
+  ```npm install -g cypress ```
+- Ubicarse en el directorio donde se instalo cypress 
