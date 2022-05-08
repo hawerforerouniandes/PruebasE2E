@@ -23,3 +23,4 @@
 - Ubicarse en el directorio donde se instalo cypress y ejecutar 
   ```mpm install cypress --save-dev ```
 - En el directorio  ```integration``` copiar los escenarios ubicados en ```PruebasCypress``` de este repositorio
+- Abrir el dashboard de ejecución  ```$(npm bin)/cypress open``` 
