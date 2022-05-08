@@ -12,6 +12,7 @@
 | Escenario positivo con el objetivo de realizar login, crear, editar y publicar agrregando recursos externos de youtube un post                           | editarpostcypress3.spec.js | editarpostcypress3.feature | Hawer Alberto Forero Rey  |
 | Escenario positivo con el objetivo de realizar login, crear y asignar un tag a un post correspondiente                                                   | creartagcypress1.spec.js   | creartagcypress1.feature   | Hawer Alberto Forero Rey  |
 | Escenario positivo con el objetivo de realizar login, crear un tag con datos aleatorios, validando que la cuenta aumente al salvar los cambios en el tag | createTagCrypess1.spec     |                            | John Edwin Guerrero Ayala |
+| Escenario negativo con el objetivo de realizar login, crear un tag con un color erroneo, no debe finalizar la creación del tag                           | createTagCrypess1.spec     |                            | John Edwin Guerrero Ayala |
 
 # Configuración de herramientas
 ## Ghost
