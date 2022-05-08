@@ -41,3 +41,15 @@
 - En la ruta ```feature/web``` copiar los escenarios ubicados en ```PruebasCypress/feature``` de este repositorio
 - En la ruta ```feature/web/step_definitions``` copiar el archivo ```PruebasCypress/feature/step_definitions/step.js``` de este repositorio
 - Ejecutar kraken ```kraken-node run``` 
+
+# Funcionalidades bajo prueba
+
+|Nombre| Descripción|
+|:-|:-|
+|Crear post|Permite a un usuario administrador crear publicaciones (post) utilizando diferentes opciones de formato y recursos audiovisuales, así como la capacidad de agregar contenido dinámico|
+|Editar post|Permite a un usuario administrador actualizar la información de una publicación en cuanto a su nombre y contenido, estando en estado publicada o no. |
+|Crear tag|Permite a un usuario administrador crear una nueva etiqueta en el sistema para poder asociarla a publicaciones realizadas |
+|Crear page|Permite a un usuario administrador la creación de una página, definiendo un título y agregado diferentes tipos de contenido multimedia a la página.  
+Así como definir el estado inicial de la página, entre borrador(Draft) o publicada.|
+|Editar página|Permite a un usuario administrador la modificación de una página, cambiando el título o el contenido multimedia a la página. 
+Así como cambiar el estado de la página, entre borrador(Draft) o publicada.|
