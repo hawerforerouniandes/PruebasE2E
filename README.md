@@ -14,4 +14,4 @@
 # Configuración de herramientas
 ## Ghost
 - Crear un directorio nuevo y en la raiz ejecutar el siguiente comando
-ghost install 3.41.1 local --force
+* ghost install 3.41.1 local --force
