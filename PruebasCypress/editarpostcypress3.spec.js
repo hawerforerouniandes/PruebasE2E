@@ -39,17 +39,33 @@ describe('Testing positivo editar post', () => {
 
         //Edit post
         body = cy.get("body");
-        body.find("textarea").first().type("Pruebas automatizadas de software, de la Universidad de los Andes. Asegurar la calidad del software es una labor de alta importancia para los equipos de desarrollo, dado que el costo de una falla en el software va más allá de la pérdida de confort al usar un sistema.");
+        body.find("textarea").first().type(" con video de youtube");
         cy.wait(500);
+        cy.get('.koenig-editor__editor').click({force:true})
+        cy.wait(500);
+
+        //Agregar recurso video
+        cy.get('.koenig-plus-menu-button').first().click({force:true})
+        cy.wait(500);
+        cy.get('[title="YouTube"] > .flex-column > .f8').click({force:true})
+        cy.wait(500);
+        cy.get('input[name=url]').click({force:true})		
+        cy.wait(500);
+        cy.get('input[name=url]').type("https://www.youtube.com/watch?v=yuyD7rvDP8I")
+        cy.wait(500);
+        cy.get(".gh-koenig-editor-pane").first().click();
+        cy.wait(3000);
+
+        //Publicar
         cy.contains("Publish").click();
         cy.wait(500);
-        cy.contains("Publish").click();
         cy.get('button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view').click()
+
+        //Vidualizar
         cy.wait(500);
-        cy.get('.gh-alert-content').then(($div)=>{
+        cy.get('.koenig-embed-video').then(($div)=>{
             expect($div).to.exist
         })  
-        cy.wait(500);
 
     })
 
