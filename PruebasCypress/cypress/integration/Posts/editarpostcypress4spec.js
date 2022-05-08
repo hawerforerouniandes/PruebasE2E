@@ -1,17 +1,21 @@
 describe('Testing positivo editar post', () => {
-    beforeEach(()=>{
-       cy.visit('http://localhost:2368/ghost/#/signin')
-        cy.wait(3000)
+    beforeEach(() => {
+        cy.fixture('admin').as('adminData')
+        cy.fixture('site').then((siteData) => {
+            cy.visit(siteData.url)
+        })
     })
 
-    it('Create tag', ()=>{
+    it('Create tag', () => {
 
-        //Login
-        cy.get("#ember8").type("h.foreror@uniandes.edu.co");
-        cy.get("#ember10").type("admin12345");
-        cy.wait(1000);
-        cy.get("#ember12").click();
-        cy.wait(1000);
+        // Login
+        cy.get('@adminData')
+            .then(adminData => {
+                //Login
+                cy.get('[type="email"]').type(adminData.email);
+                cy.get('[type="password"]').type(adminData.password);
+                cy.get('[type="submit"]').click();
+            })
 
         //Open dashboard
         cy.url().should("include", "/site");
@@ -22,12 +26,12 @@ describe('Testing positivo editar post', () => {
         cy.url().should("include", "/tags");
         cy.wait(1000);
 
-         //Create tags
-         cy.contains("New tag").click();
-         let body = cy.get("body");
-         cy.get('input[name=name]').type("pruebas e2e")
-         cy.get('.gh-btn.gh-btn-blue.gh-btn-icon.ember-view').first().click({force:true})
-         cy.wait(1000);
+        //Create tags
+        cy.contains("New tag").click();
+        let body = cy.get("body");
+        cy.get('input[name=name]').type("pruebas e2e")
+        cy.get('.gh-btn.gh-btn-blue.gh-btn-icon.ember-view').first().click({ force: true })
+        cy.wait(1000);
 
         //Posts
         cy.contains("Posts").click();
@@ -37,7 +41,7 @@ describe('Testing positivo editar post', () => {
         //Crete post
         cy.contains("New post").click();
         body = cy.get("body");
-        
+
 
         //Configuración
         cy.get('button.post-settings').click()
@@ -45,7 +49,7 @@ describe('Testing positivo editar post', () => {
 
         //Select tag
         cy.get('.ember-power-select-trigger-multiple-input').then($selects => {
-            var randomSelect = $selects.get(0);            
+            var randomSelect = $selects.get(0);
             cy.wrap(randomSelect).click();
             cy.contains("pruebas e2e").click();
             cy.wait(1000);
@@ -54,7 +58,7 @@ describe('Testing positivo editar post', () => {
         //Agregar nombre post
         body = cy.get("body");
         body.find("textarea").first().type("Nuevo post con etiqueta", { force: true });
-        cy.get('.koenig-editor__editor').click({force:true})
+        cy.get('.koenig-editor__editor').click({ force: true })
         cy.wait(2000);
 
         //Publicar
@@ -64,4 +68,4 @@ describe('Testing positivo editar post', () => {
 
     })
 
-  })
+})

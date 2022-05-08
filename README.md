@@ -26,11 +26,15 @@
   ```npm install -g cypress ```
 - Ubicarse en el directorio donde se instalo cypress y ejecutar 
   ```npm install cypress --save-dev ```
-- En el directorio  ```integration``` copiar los escenarios ubicados en ```PruebasCypress``` de este repositorio
-- Abrir el dashboard de ejecución  ```$(npm bin)/cypress open``` 
 
-### Condiciones iniciales para pruebas ###
-* Actualizar el archivo ```fixture/admin.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas
+### Ejecución de pruebas ###
+>### Condiciones iniciales para pruebas ###
+>* Actualizar el archivo ```fixture/admin.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas, con rol administrador.
+>* Actualizar el archivo ```fixture/site.json``` con la url al blog de ghost
+  
+### Opciones de ejecución
+1. Abrir el dashboard de ejecución  ```$(npm bin)/cypress open``` 
+2. Ejecutando el comando ```cypress run --headless```
 
 ## Kraken
 - Instalar ```npm install kraken-node -g```
