@@ -24,3 +24,14 @@
   ```mpm install cypress --save-dev ```
 - En el directorio  ```integration``` copiar los escenarios ubicados en ```PruebasCypress``` de este repositorio
 - Abrir el dashboard de ejecución  ```$(npm bin)/cypress open``` 
+## Kraken
+- Instalar ```npm install kraken-node -g```
+- Crear un workspace personal y en la raiz ejecutar el siguiente comando
+  ```kraken-node gen```
+- Ubicarse en el directorio donde se instalo kraken y ejecutar 
+  ```npm init``` ```npm install kraken-node```
+- Instalar ADB ```brew install android-platform-tools```
+- En la raiz del proyecto copiar el archivo  ```properties.json``` proporcionado en ```PruebasKraken``` de este repositorio
+- En la ruta ```feature/web``` copiar los escenarios ubicados en ```PruebasCypress/feature``` de este repositorio
+- En la ruta ```feature/web/step_definitions``` copiar el archivo ```PruebasCypress/feature/step_definitions/step.js``` de este repositorio
+- Ejecutar kraken ```kraken-node run``` 
