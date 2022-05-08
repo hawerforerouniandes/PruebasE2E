@@ -11,6 +11,7 @@
 | Escenario negativo con el objetivo de realizar login, crear y editar post con título de mas de 255 caracteres                                            | editarpostcypress2.spec.js | editarpostkraken2.feature | Hawer Alberto Forero Rey  |
 | Escenario positivo con el objetivo de realizar login, crear, editar y publicar agrregando recursos externos de youtube un post                           | editarpostcypress3.spec.js | editarpostkraken3.feature | Hawer Alberto Forero Rey  |
 | Escenario positivo con el objetivo de realizar login, crear y asignar un tag a un post correspondiente                                                   | editarpostcypress4.spec.js   |   | Hawer Alberto Forero Rey  |
+| Escenario negativo con el objetivo de realizar login, crear, publicar un post para posteriormente elimanrlo en estado publicado                                               |  |   | Hawer Alberto Forero Rey  |
 | Escenario positivo con el objetivo de realizar login, crear un tag con datos aleatorios, validando que la cuenta aumente al salvar los cambios en el tag | createTagCrypess1.spec.js  |                            | John Edwin Guerrero Ayala |
 | Escenario negativo con el objetivo de realizar login, crear un tag con un color erroneo, no debe finalizar la creación del tag                           | createTagCrypess1.spec.js  |                            | John Edwin Guerrero Ayala |
 
