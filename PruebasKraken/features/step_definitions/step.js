@@ -50,4 +50,36 @@ When('I click publish', async function() {
     return await element.click();
 })
 
+When('I click koenig-editor__editor', async function() {
+    let element = await this.driver.$('.koenig-editor__editor');
+    return await element.click();
+})
+
+When('I click koenig-plus-menu-button', async function() {
+    let element = await this.driver.$('.koenig-plus-menu-button');
+    return await element.click();
+})
+
+When('I click youtube', async function() {
+    let element = await this.driver.$('[title="YouTube"] > .flex-column > .f8');
+    return await element.click();
+})
+
+When('I click input url', async function() {
+    let element = await this.driver.$('input[name=url]');
+    return await element.click();
+})
+
+When('I enter url youtube {kraken-string}', async function (url) {
+    let element = await this.driver.$('input[name=url]');
+    return await element.setValue(url);
+});
+
+When('I click view', async function() {
+    let element = await this.driver.$('.gh-notification-actions');
+    return await element.click();
+})
+
+
+
 
