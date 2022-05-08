@@ -25,7 +25,7 @@ describe('Testing positivo editar post', () => {
         //Crete post
         cy.contains("New post").click();
         let body = cy.get("body");
-        body.find("textarea").first().type("PostPrueba2", { force: true });
+        body.find("textarea").first().type("Nuevo post", { force: true });
         cy.get(".gh-koenig-editor-pane").first().click();
         cy.wait(2000);
 
@@ -35,7 +35,7 @@ describe('Testing positivo editar post', () => {
         cy.wait(1000);
 
         //Select post
-        cy.contains("PostPrueba2").click({ force: true });
+        cy.contains("Nuevo post").click({ force: true });
 
         //Edit post
         body = cy.get("body");
