@@ -15,3 +15,5 @@
 ## Ghost
 - Crear un directorio nuevo y en la raiz ejecutar el siguiente comando
   ```ghost install 3.41.1 local --force ```
+- Ubicarse en el directorio donde se instalo el ghost y ejecutar
+ ```cypress open ```
