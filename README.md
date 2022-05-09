@@ -54,6 +54,9 @@
 - En la ruta ```feature/web/step_definitions``` copiar el archivo ```PruebasCypress/feature/step_definitions/step.js``` de este repositorio
 - Ejecutar kraken ```kraken-node run``` 
 
+>### Condiciones iniciales para pruebas ###
+>* Actualizar el archivo ```properties.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas, con rol administrador.
+
 # Funcionalidades bajo prueba
 
 |Nombre| Descripción|
