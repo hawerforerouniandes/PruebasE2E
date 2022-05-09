@@ -15,6 +15,10 @@
 | Escenario positivo con el objetivo de realizar login, crear un tag con datos aleatorios, validando que la cuenta aumente al salvar los cambios en el tag | createTagCrypess1.spec.js  |                           | John Edwin Guerrero Ayala |
 | Escenario negativo con el objetivo de realizar login, crear un tag con un color erroneo, no debe finalizar la creación del tag                           | createTagCrypess1.spec.js  |                           | John Edwin Guerrero Ayala |
 | Escenario positivo con el objetivo de realizar login, crear una Page con datos aleatorios, publicar, editar el título y actualizar la publicación        | editPagesCypress.spec.js   |                           | John Edwin Guerrero Ayala |
+| prueba | crearpagecypress1.js | crearpagekraken1.feature | Brayan Sebastian Hernández Barrera |
+| prueba | crearpagecypress2.js | crearpagekraken2.feature | Brayan Sebastian Hernández Barrera |
+| prueba | crearpagecypress3.js | crearpagekraken3.feature | Brayan Sebastian Hernández Barrera |
+| prueba | crearpagecypress4.js | crearpagekraken4.feature | Brayan Sebastian Hernández Barrera |
 
 
 # Configuración de herramientas
