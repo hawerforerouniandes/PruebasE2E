@@ -40,10 +40,10 @@ describe('Testing Ghost application Create new Page with three elements', () => 
   })
 
   function FillLogin(user, password){
-    cy.get('#ember7').type(user);
-    cy.get('#ember9').type(password);
+    cy.get('[name="identification"]').type(user);
+    cy.get('[name="password"]').type(password);
     cy.wait(1000);
-    cy.get('#ember11').click();
+    cy.get('[type="submit"]').click();
     cy.wait(5000);
   }
 
