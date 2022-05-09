@@ -10,7 +10,9 @@
     "PASSWORD1": "Prueba123@",
     "TITLEPAGE": "Pagina de Prueba",
     "ARTICLE": "Esto es una prueba",
-    "URLLINK":"https://www.youtube.com/watch?v=-OwPzzK_CEw"
+    "URLLINK":"https://www.youtube.com/watch?v=-OwPzzK_CEw",
+    "TAG": "pruebas e2e",
+    "TITLE_TAG": "Nuevo post con tag"
 
 }
 

@@ -223,4 +223,28 @@ Then('I verify the URL published', async function() {
     return element.click();
 });
 
+When('I enter title tag {kraken-string}', async function (title) {
+    let element = await this.driver.$('input[name=name]');
+    return await element.setValue(title);
+});
+
+When('I click create tag', async function() {
+    let element = await this.driver.$('.gh-btn.gh-btn-blue.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
+When('I click post settings', async function() {
+    let element = await this.driver.$('button.post-settings');
+    return await element.click();
+})
+
+When('I click tags', async function() {
+    let element = await this.driver.$('.ember-power-select-trigger-multiple-input');
+    return await element.click();
+})
+
+When('I click select tag', async function() {
+    let element = await this.driver.$('li=pruebas e2e');
+    return await element.click();
+})
 
