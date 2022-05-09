@@ -2,7 +2,6 @@
 - Hawer Alberto Forero Rey 
 - John Edwin Guerrero Ayala
 - Brayan Sebastian Hernandez Barrera
-- Jhon Sebastian Bohorquez Guerrero
 
 # Descripción de escenarios
 |                                                                       Descripción                                                                        |          Cypress           |          Kraken           |        Responsable        |
