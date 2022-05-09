@@ -34,6 +34,76 @@ describe('Tests edición de Pages', function() {
         cy.contains(updatedPageTitle);
     });
 
+    it('Editar una pagina con un titulo mayor a 255 caracteres', () => {
+
+        const pageTitle = faker.lorem.sentence();
+        const pageText = faker.lorem.paragraphs();
+
+        loginToGhost();
+        goToPages();
+        createBasicPage(pageTitle, pageText);
+
+        goToDashBoard();
+
+        selectCreatedPageByTitle(pageTitle);
+
+        const updatedPageTitle = faker.lorem.sentences(6);
+        updatePageTitle(updatedPageTitle, false);
+
+        cy.contains("Update").click();
+        cy.get('Footer').contains("Update").click();
+        cy.get('Footer').contains("Retry").should("be.visible");
+        updatePageTitle(pageTitle);
+    });
+
+    it('Editar una pagina de un draft a publicada', () => {
+
+        const pageTitle = faker.lorem.sentence();
+        const pageText = faker.lorem.paragraphs();
+
+        loginToGhost();
+        goToPages();
+
+        cy.contains("New page").click();
+        updatePageTitle(pageTitle);
+        updatePageText(pageText);
+
+        goToDashBoard();
+
+        selectCreatedPageByTitle(pageTitle);
+
+        publishPage();
+
+        goToDashBoard();
+    });
+
+    it('Eliminar una page', () => {
+
+        const pageTitle = faker.lorem.sentence();
+        const pageText = faker.lorem.paragraphs();
+
+        loginToGhost();
+        goToPages();
+        createBasicPage(pageTitle, pageText);
+
+        goToDashBoard();
+
+        //Tags
+        cy.get('ol').find('li').then((pages) => {
+            expect(pages.length, 'Initial tags').to.be.gt(0);
+
+            //Eliminar tag
+            selectCreatedPageByTitle(pageTitle);
+            cy.get('[title="Settings"]').click();
+            cy.get(' Delete ').click();
+            cy.get('Delete').click();
+
+            cy.get('ol').find('li').then((newPages) => {
+                expect(newPages.length, 'Initial tags').to.be.gt(pages.length);
+            });
+        });
+    });
+
     function loginToGhost() {
         // Login
         cy.get('@adminData')
@@ -67,7 +137,10 @@ describe('Tests edición de Pages', function() {
         cy.contains("New page").click();
         updatePageTitle(pageTitle);
         updatePageText(pageText);
+        publishPage();
+    }
 
+    function publishPage() {
         //Publish page
         cy.contains("Publish").click();
         cy.get('Footer').contains("Publish").click();
@@ -78,8 +151,10 @@ describe('Tests edición de Pages', function() {
         cy.contains(pageTitle).click();
     }
 
-    function updatePageTitle(pageTitle) {
-        cy.get('[placeholder="Page Title"]').clear()
+    function updatePageTitle(pageTitle, clearing = true) {
+        if (clearing) {
+            cy.get('[placeholder="Page Title"]').clear()
+        }
         cy.get('[placeholder="Page Title"]').type(pageTitle);
     }
 
