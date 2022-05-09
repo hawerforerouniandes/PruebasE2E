@@ -1,7 +1,7 @@
-Feature: Register into losestudiantes
+Feature: Edit post ghost
 
 @user2 @web
-Scenario: Successful registration
+Scenario: Successful edit publish post
  Given I navigate to page "http://localhost:2368/ghost/"
  And I wait for 2 seconds
  When I enter email "<EMAIL>"
