@@ -25,7 +25,8 @@
 - Crear un workspace personal y en la raiz ejecutar el siguiente comando
   ```npm install -g cypress ```
 - Ubicarse en el directorio donde se instalo cypress y ejecutar 
-  ```npm install cypress --save-dev ```
+  - ```npm install cypress --save-dev ```
+  - ```npm install @faker-js/faker --save-dev```
 
 ### Ejecución de pruebas ###
 >### Condiciones iniciales para pruebas ###
