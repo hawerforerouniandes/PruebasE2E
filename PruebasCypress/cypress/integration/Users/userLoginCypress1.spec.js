@@ -3,6 +3,9 @@ describe('', function() {
 
     beforeEach(() => {
         cy.fixture('admin').as('adminData')
+        cy.fixture('site').then((siteData) => {
+            cy.visit(siteData.url)
+        })
     })
 
     it('cy.fixture() or require - load a fixture', function() {
@@ -24,4 +27,17 @@ describe('', function() {
                 expect(adminData.email).to.not.empty;
             })
     })
+
+    it('Admin is able to login', () => {
+        // Login
+        cy.get('@adminData')
+            .then(adminData => {
+                //Login
+                cy.get('[type="email"]').type(adminData.email);
+                cy.get('[type="password"]').type(adminData.password);
+                cy.get('[type="submit"]').click();
+
+                cy.contains('Retry').should('not.exist');
+            })
+    });
 })
