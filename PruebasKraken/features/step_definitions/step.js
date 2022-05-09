@@ -248,3 +248,12 @@ When('I click select tag', async function() {
     return await element.click();
 })
 
+When('I click delete post', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button');
+    return await element.click();
+})
+
+When('I click confirm delete post', async function() {
+    let element = await this.driver.$('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
+    return await element.click();
+})
