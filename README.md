@@ -56,7 +56,7 @@
 - En la raiz del proyecto copiar el archivo  ```properties.json``` proporcionado en ```PruebasKraken``` de este repositorio
 - En la ruta ```feature``` copiar los escenarios ubicados en ```PruebasKraken/feature``` de este repositorio
 - En la ruta ```feature/web/step_definitions``` copiar el archivo ```PruebasKraken/feature/step_definitions/step.js``` de este repositorio
-- Ejecutar kraken ```kraken-node run``` 
+- Ejecutar kraken ```./node_modules/kraken-node/bin/kraken-node run  ``` 
 
 >### Condiciones iniciales para pruebas ###
 >* Actualizar el archivo ```properties.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas, con rol administrador.
