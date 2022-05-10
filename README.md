@@ -54,8 +54,8 @@
   ```npm init``` ```npm install kraken-node```
 - Instalar ADB ```brew install android-platform-tools```
 - En la raiz del proyecto copiar el archivo  ```properties.json``` proporcionado en ```PruebasKraken``` de este repositorio
-- En la ruta ```feature/web``` copiar los escenarios ubicados en ```PruebasCypress/feature``` de este repositorio
-- En la ruta ```feature/web/step_definitions``` copiar el archivo ```PruebasCypress/feature/step_definitions/step.js``` de este repositorio
+- En la ruta ```feature``` copiar los escenarios ubicados en ```PruebasKraken/feature``` de este repositorio
+- En la ruta ```feature/web/step_definitions``` copiar el archivo ```PruebasKraken/feature/step_definitions/step.js``` de este repositorio
 - Ejecutar kraken ```kraken-node run``` 
 
 >### Condiciones iniciales para pruebas ###
