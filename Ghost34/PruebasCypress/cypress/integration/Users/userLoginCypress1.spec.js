@@ -1,10 +1,11 @@
+import signinPage from '../page-objects/signin-page';
 const requiredAdmin = require('../../fixtures/admin.json')
 describe('', function() {
 
     beforeEach(() => {
         cy.fixture('admin').as('adminData')
         cy.fixture('site').then((siteData) => {
-            cy.visit(siteData.url)
+            signinPage.open(siteData.url)
         })
     })
 
@@ -33,9 +34,9 @@ describe('', function() {
         cy.get('@adminData')
             .then(adminData => {
                 //Login
-                cy.get('[type="email"]').type(adminData.email);
-                cy.get('[type="password"]').type(adminData.password);
-                cy.get('[type="submit"]').click();
+                signinPage.emailField.type(adminData.email);
+                signinPage.passwordField.type(adminData.password);
+                signinPage.submitButton.click();
 
                 cy.contains('Retry').should('not.exist');
             })
