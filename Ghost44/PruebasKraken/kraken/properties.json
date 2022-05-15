@@ -14,7 +14,10 @@
     "TAG": "pruebas e2e",
     "TITLE_TAG": "Nuevo post con tag",
     "TITLE_DELETE": "Nuevo post para eliminar",
-    "URLAMBIENTE":"http://localhost:3002/ghost/#/signin"
+    "URLAMBIENTE":"http://localhost:3002/ghost/#/signin",
+    "HOST": "http://localhost:3002/ghost/",
+    "URL_POSTS": "http://localhost:3002/ghost/#/posts",
+    "URL_EDITOR_POST": "http://localhost:3002/ghost/#/editor/post"
 
 }
 
