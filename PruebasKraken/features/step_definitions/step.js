@@ -1,17 +1,17 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('#ember8');
+    let element = await this.driver.$('[name="identification"]');
     return await element.setValue(email);
 });
 
 When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('#ember10');
+    let element = await this.driver.$('[name="password"]');
     return await element.setValue(password);
 });
 
 When('I click login', async function() {
-    let element = await this.driver.$('#ember12');
+    let element = await this.driver.$('[type="submit"]');
     return await element.click();
 })
 
@@ -223,4 +223,22 @@ Then('I verify the URL published', async function() {
     return element.click();
 });
 
+Then('I click in preview button', async function() {
+    let element = await this.driver.$('[class="gh-btn gh-editor-preview-trigger"]');
+    return element.click();
+});
 
+Then('I click in phone icon', async function() {
+    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
+    return element[0].click();
+});
+
+Then('I click in twitter icon', async function() {
+    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
+    return element[1].click();
+});
+
+Then('I click in back button', async function() {
+    let element = await this.driver.$('[title="Close"]');
+    return element.click();
+});
