@@ -23,6 +23,11 @@
 |  14   | Escenario positivo con el objetivo de crear una pagina en la aplicacion Ghost con 3 elementos, los cuales fueron una lista desplegable con valores, una separacion y un boton, y verificar que la pagina sea creada | crearpagecypress2.js       | crearpagekraken2.feature  | Brayan Sebastian Hernández Barrera |     :no_entry:     |
 |  15   | Escenario positivo con el objetivo de crear una pagina en la aplicacion Ghost con un video adjunto y verificar que la pagina sea creada                                                                             | crearpagecypress3.js       | crearpagekraken3.feature  | Brayan Sebastian Hernández Barrera |     :no_entry:     |
 |  16   | Escenario positivo con el objetivo de crear una pagina en la aplicacion Ghost y publicarla, y verificar que se haya publicado correctamente                                                                         | crearpagecypress4.js       | crearpagekraken4.feature  | Brayan Sebastian Hernández Barrera |     :no_entry:     |
+| 17 | Escenario positivo con el objetivo de crear el borrador de un post y verificar que se encuentre en la lista de post | crearpostcypress1.spec.js | | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) | ⛔ | 
+| 18 | Escenario positivo con el objetivo de crear y publicar un post y verificar que se encuentre en la lista de post | crearpostcypress2.spec.js | | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) | ⛔ | 
+| 19 | Escenario negativo con el objetivo de crear un tag con nombre con 200 caracteres y verificar que se muestre el mensaje de error “Tag names cannot be longer than 191 characters.” | creartagcypress2.spec.js | | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) | ⛔ | 
+| 20 | Escenario negativo con el objetivo de crear un tag con una descripción de 600 caracteres y verificar que se muestre el mensaje de error “Description cannot be longer than 500 characters.” | creartagcypress3.spec.js | | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) | ⛔ | 
+| 21 | Escenario positivo con el objetivo de crear y editar el nombre de un tag y verificar que se encuentre en la lista de tags. | creartagcypress4.spec.js | | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) | ⛔ | 
 
 
 # Configuración de herramientas
