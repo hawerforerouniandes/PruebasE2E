@@ -13,7 +13,8 @@
     "URLLINK":"https://www.youtube.com/watch?v=-OwPzzK_CEw",
     "TAG": "pruebas e2e",
     "TITLE_TAG": "Nuevo post con tag",
-    "TITLE_DELETE": "Nuevo post para eliminar"
+    "TITLE_DELETE": "Nuevo post para eliminar",
+    "URLAMBIENTE":"http://localhost:3002/ghost/#/signin"
 
 }
 
