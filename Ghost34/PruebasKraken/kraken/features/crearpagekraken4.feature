@@ -2,7 +2,7 @@ Feature: Crea una pagina en la aplicacion Ghost y publicarla
 
 @user1 @web
 Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web y la publico
-    Given I navigate to page "http://localhost:2368/ghost/#/signin"
+    Given I navigate to page "<GHOST_URL>"
     And I wait for 5 seconds
     When I enter email "<USERNAME1>"
     And I enter password "<PASSWORD1>"

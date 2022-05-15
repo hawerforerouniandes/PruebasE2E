@@ -1,17 +1,17 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
-When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('#ember8');
+When('I enter email {kraken-string}', async function(email) {
+    let element = await this.driver.$('[type="email"]');
     return await element.setValue(email);
 });
 
-When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('#ember10');
+When('I enter password {kraken-string}', async function(password) {
+    let element = await this.driver.$('[type="password"]');
     return await element.setValue(password);
 });
 
 When('I click login', async function() {
-    let element = await this.driver.$('#ember12');
+    let element = await this.driver.$('[type="submit"]');
     return await element.click();
 })
 
@@ -20,7 +20,7 @@ When('I click posts', async function() {
     return await element.click();
 })
 
-When('I enter title post {kraken-string}', async function (title) {
+When('I enter title post {kraken-string}', async function(title) {
     let element = await this.driver.$('textarea');
     return await element.setValue(title);
 });
@@ -70,7 +70,7 @@ When('I click input url', async function() {
     return await element.click();
 })
 
-When('I enter url youtube {kraken-string}', async function (url) {
+When('I enter url youtube {kraken-string}', async function(url) {
     let element = await this.driver.$('input[name=url]');
     return await element.setValue(url);
 });
@@ -81,7 +81,7 @@ When('I click view', async function() {
 })
 
 When('I click sign in', async function() {
-    let element = await this.driver.$('#ember11');
+    let element = await this.driver.$('[type="submit"]');
     return await element.click();
 
 });
@@ -112,7 +112,7 @@ Then('I fill title of new page {kraken-string}', async function(title) {
 Then('I fill new article in the new page {kraken-string}', async function(article) {
     let element = await this.driver.$('[data-kg="editor"]');
     await element.setValue(article);
-    return this.driver.keys("Enter"); 
+    return this.driver.keys("Enter");
 });
 
 Then('I return to list of pages', async function() {
@@ -165,13 +165,13 @@ Then('I fill the header of toogle element', async function() {
 Then('I fill the collapsible of toogle element', async function() {
     let element = await this.driver.$('[data-placeholder="Collapsible content"]');
     await element.setValue('persona1');
-    return this.driver.keys("Enter"); 
+    return this.driver.keys("Enter");
 
 });
 
 Then('I move to the next element', async function() {
     await this.driver.keys("Escape")
-    return this.driver.keys("Enter"); 
+    return this.driver.keys("Enter");
 
 });
 
@@ -196,7 +196,7 @@ Then('I select left position button element', async function() {
 Then('I fill the youtube link {kraken-string}', async function(link) {
     let element = await this.driver.$('[placeholder="Paste URL to add embedded content..."]');
     await element.setValue(link);
-    return this.driver.keys("Enter"); 
+    return this.driver.keys("Enter");
 
 });
 
@@ -223,7 +223,7 @@ Then('I verify the URL published', async function() {
     return element.click();
 });
 
-When('I enter title tag {kraken-string}', async function (title) {
+When('I enter title tag {kraken-string}', async function(title) {
     let element = await this.driver.$('input[name=name]');
     return await element.setValue(title);
 });
