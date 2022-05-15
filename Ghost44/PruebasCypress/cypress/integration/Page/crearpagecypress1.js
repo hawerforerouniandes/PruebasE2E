@@ -28,16 +28,19 @@ describe('Testing Ghost application Create new Page', () => {
     cy.get('[name="identification"]').type(user);
     cy.get('[name="password"]').type(password);
     cy.wait(1000);
+    cy.screenshot();
     cy.get('[type="submit"]').click();
     cy.wait(5000);
   }
 
   function ClickLinkPage(){
+    cy.screenshot();
     cy.get('[href="#/pages/"]').click();
     cy.wait(1000);
   }
 
   function ClickButtonNewPage(){
+    cy.screenshot();
     cy.get('[href="#/editor/page/"]').click();
     cy.wait(2000);
   }
@@ -53,8 +56,10 @@ describe('Testing Ghost application Create new Page', () => {
 
   function ValidateNewPageCreation(title){
     cy.wait(10000);
+    cy.screenshot();
     cy.get('[href="#/pages/"]').click();
     cy.wait(2000);
+    cy.screenshot();
     cy.get('h3', { timeout: 10000 }).contains(title).should('be.visible');
   }
 
