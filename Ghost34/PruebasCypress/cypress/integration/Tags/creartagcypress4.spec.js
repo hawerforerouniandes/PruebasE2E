@@ -36,19 +36,37 @@ describe('Testing positivo crear post', () => {
       cy.screenshot();
       cy.wait(1000);
       cy.get('#tag-name').focus();
-      const name = faker.datatype.string(10);
+      const name = 'Nuevo tag';
       cy.get('#tag-name').type(name, {force: true, parseSpecialCharSequences: false} );
       cy.screenshot();
       cy.get('#tag-description').focus();
-      //Description with 510 characters
-      const description = faker.datatype.string(510);
+      const description = faker.datatype.string(10);
       cy.get('#tag-description').type(description, {force: true, parseSpecialCharSequences: false} );
       cy.screenshot();      
       cy.get('header').find('section').contains('Save').click();
       cy.wait(1000);
       cy.screenshot();
 
-      //Error message validation
-      cy.get('#tag-description').parent().children('p').contains('Description cannot be longer than 500 characters.').should('be.visible');
+      //Edit tag
+      cy.get('.gh-nav-top').contains('Tags').click();
+      cy.url().should("include", "/tags");
+      cy.screenshot();
+      cy.wait(1000);
+      cy.get('.gh-main').children('section').contains('Nuevo tag').first().click();
+      cy.wait(1000);
+      cy.screenshot();
+      cy.get('#tag-name').focus();
+      const editName = ' Editado';
+      cy.get('#tag-name').type(editName, {force: true, parseSpecialCharSequences: false} );
+      cy.screenshot();
+      cy.get('header').find('section').contains('Save').click();
+      cy.wait(1000);
+      cy.screenshot();
+      cy.get('.gh-nav-top').contains('Tags').click();
+      cy.url().should("include", "/tags");
+      cy.screenshot();
+
+      //Name tag validation in list
+      cy.get('.gh-main').children('section').contains('Nuevo tag Editado').first().should('be.visible')
     })
 })

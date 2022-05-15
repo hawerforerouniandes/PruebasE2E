@@ -54,7 +54,7 @@ describe('Testing positivo crear post', () => {
     cy.screenshot();
     cy.wait(1000);
     
-    //Validate draft post
+    //Validate publish post
     cy.get('.gh-posts-list-item').contains('Published').first().focus();
     cy.screenshot();
     cy.get('.gh-posts-list-item').contains('Published').first().parent().contains("Prueba publicar post").should('be.visible');
