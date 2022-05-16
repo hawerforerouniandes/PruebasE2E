@@ -15,6 +15,12 @@ class SigninPage {
         cy.visit(url)
     }
 
+    loginWithAdminData(adminData) {
+        this.emailField.type(adminData.email);
+        this.passwordField.type(adminData.password);
+        this.submitButton.click();
+        cy.contains('Retry').should('not.exist');
+    }
 }
 
 export default new SigninPage();
