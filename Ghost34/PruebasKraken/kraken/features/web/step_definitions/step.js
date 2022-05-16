@@ -257,3 +257,15 @@ When('I click confirm delete post', async function() {
     let element = await this.driver.$('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
     return await element.click();
 })
+
+When('I take screenshot of step {string} and scenario {string}', async function(step, scenario) {
+    return await this.driver.takeScreenshot().then(
+        function(image) {
+            if (!fs.existsSync(`./regression/${scenario}`)){
+                fs.mkdirSync(`./regression/${scenario}`, { recursive: true });
+            }
+            fs.writeFileSync(`./regression/${scenario}/${step}.png`, image, 'base64');
+        }
+    );
+   
+})
