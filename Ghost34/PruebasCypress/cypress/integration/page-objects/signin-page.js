@@ -13,12 +13,15 @@ class SigninPage {
 
     open(url) {
         cy.visit(url)
+        cy.screenshot();
     }
 
     loginWithAdminData(adminData) {
         this.emailField.type(adminData.email);
         this.passwordField.type(adminData.password);
+        cy.screenshot();
         this.submitButton.click();
+        cy.screenshot();
         cy.contains('Retry').should('not.exist');
     }
 }

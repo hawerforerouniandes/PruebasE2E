@@ -19,10 +19,12 @@ class TagEditorPage {
         this.nameField.type(name);
         this.accentColorField.type(accentColor);
         this.descriptionField.type(description);
+        cy.screenshot();
     }
 
     saveTag() {
         this.saveButton.click();
+        cy.screenshot();
     }
 
 }
