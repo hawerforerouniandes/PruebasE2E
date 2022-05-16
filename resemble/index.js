@@ -3,10 +3,10 @@ const compareImages = require("resemblejs/compareImages")
 const config = require("./config.json");
 const fs = require('fs');
 
-const { viewportHeight, viewportWidth, browsers, options } = config;
+const { viewportHeight, viewportWidth, steps, options } = config;
 
 async function executeTest(){
-    if(browsers.length === 0){
+    if(steps.length === 0){
       return;
     }
     let resultInfo = {}
@@ -54,10 +54,10 @@ async function executeTest(){
 (async ()=>console.log(await executeTest()))();
 
 
-function browser(b, info){
+function step(b, info){
     return `<div class=" browser" id="test0">
     <div class=" btitle">
-        <h2>Browser: ${b}</h2>
+        <h2>Step: ${b}</h2>
         <p>Data: ${JSON.stringify(info)}</p>
     </div>
     <div class="imgline">
@@ -87,12 +87,11 @@ function createReport(datetime, resInfo){
             <link href="index.css" type="text/css" rel="stylesheet">
         </head>
         <body>
-            <h1>Report for 
-                 <a href="${config.url}"> ${config.url}</a>
+            <h1>Report for Ghost
             </h1>
             <p>Executed: ${datetime}</p>
             <div id="visualizer">
-                ${config.browsers.map(b=>browser(b, resInfo[b]))}
+                ${config.steps.map(b=>step(b, resInfo[b]))}
             </div>
         </body>
     </html>`
