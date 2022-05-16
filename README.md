@@ -68,6 +68,15 @@
 >### Condiciones iniciales para pruebas ###
 >* Actualizar el archivo ```properties.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas, con rol administrador.
 
+## Resemble.js
+- Ubicarse en un directorio personal con el comando ```cd <ruta>```
+- Cree un subdirectorio vacío con el comando ```mkdir <nombre>``` y ubicarse en el
+- Crear un proyecto con el comando ```npm init```
+- En este directorio del proyecto debe crear un archivo llamado ```index.js```  que contendrá el código fuente para realizar la prueba de regresión visual 
+- En este directorio del proyecto debe crear un archivo llamado ```index.js```  que contendrá el código fuente para realizar la prueba de regresión visual 
+- Crear un archivo ```config.json``` que le permitirá establecer los parámetros requeridos para la prueba.
+
+
 # Funcionalidades bajo prueba
 
 |Nombre| Descripción|
