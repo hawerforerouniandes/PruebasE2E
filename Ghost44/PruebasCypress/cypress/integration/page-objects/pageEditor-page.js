@@ -43,6 +43,7 @@ class PageEditorPage {
         cy.screenshot();
         cy.get('[title="Settings"]').click();
         cy.get('[class="gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button"]').click();
+        cy.screenshot();
         cy.get('[class="modal-content"]').within(() => {
             cy.screenshot();
             cy.contains('Delete').click();
