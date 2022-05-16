@@ -283,10 +283,10 @@ When('I click confirm delete post', async function() {
 When('I take screenshot of step {string} and scenario {string}', async function(step, scenario) {
     return await this.driver.takeScreenshot().then(
         function(image) {
-            if (!fs.existsSync(`./results/${scenario}`)){
-                fs.mkdirSync(`./results/${scenario}`, { recursive: true });
+            if (!fs.existsSync(`./regression/${scenario}`)){
+                fs.mkdirSync(`./regression/${scenario}`, { recursive: true });
             }
-            fs.writeFileSync(`./results/${scenario}/${step}.png`, image, 'base64');
+            fs.writeFileSync(`./regression/${scenario}/${step}.png`, image, 'base64');
         }
     );
    
