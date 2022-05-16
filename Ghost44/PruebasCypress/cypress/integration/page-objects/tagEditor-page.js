@@ -4,7 +4,7 @@ class TagEditorPage {
     }
 
     get accentColorField() {
-        return cy.get('[name="accent-color"]');
+        return cy.get('.gh-main-section-content').find('[name="accent-color"]').first();
     }
 
     get descriptionField() {
