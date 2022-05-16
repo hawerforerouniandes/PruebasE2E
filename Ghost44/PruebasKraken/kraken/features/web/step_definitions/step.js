@@ -48,9 +48,15 @@ When('I click menu publish', async function() {
 })
 
 When('I click publish', async function() {
-    let element = await this.driver.$('button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view');
+    let element = await this.driver.$('.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon.ember-view');
     return await element.click();
 })
+
+When('I click publish confirm', async function() {
+    let element = await this.driver.$('.gh-btn.gh-btn-black.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
 
 When('I click koenig-editor__editor', async function() {
     let element = await this.driver.$('.koenig-editor__editor');
@@ -250,12 +256,12 @@ When('I enter title tag {kraken-string}', async function (title) {
 });
 
 When('I click create tag', async function() {
-    let element = await this.driver.$('.gh-btn.gh-btn-blue.gh-btn-icon.ember-view');
+    let element = await this.driver.$('.gh-btn.gh-btn-primary.gh-btn-icon.ember-view');
     return await element.click();
 })
 
 When('I click post settings', async function() {
-    let element = await this.driver.$('button.post-settings');
+    let element = await this.driver.$('.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon');
     return await element.click();
 })
 

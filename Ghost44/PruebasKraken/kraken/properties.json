@@ -17,7 +17,9 @@
     "URLAMBIENTE":"http://localhost:3002/ghost/#/signin",
     "HOST": "http://localhost:3002/ghost/",
     "URL_POSTS": "http://localhost:3002/ghost/#/posts",
-    "URL_EDITOR_POST": "http://localhost:3002/ghost/#/editor/post"
+    "URL_EDITOR_POST": "http://localhost:3002/ghost/#/editor/post",
+    "URL_TAGS": "http://localhost:3002/ghost/#/tags",
+    "URL_EDITOR_TAG": "http://localhost:3002/ghost/#/tags/new"
 
 }
 
