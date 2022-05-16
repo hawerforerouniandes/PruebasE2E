@@ -20,20 +20,10 @@ describe('Testing Ghost application Create new Page with three elements', () => 
            FillTitleNewPage(title);
            FillTextArticleNewPage(article);
            SelectListOfElements();
-           SelectToggleElement();
-            FillHeaderToogleElement();
-            FillCollapsibleToogleElement();
-            FillCollapsibleToogleElement();
+           SelectGalleryElement();
             MoveToNextElement();
             SelectListOfElements();
             SelectDividerElement();
-            MoveToNextElement();
-            SelectListOfElements();
-            SelectButtonElement();
-            SelectLeftPositionButtonElement();
-            FillTextButtonElement();
-            FillTextURLButtonElement();
-            MoveToNextElement();
            ValidateNewPageCreation(title);
        })
     })
@@ -43,23 +33,26 @@ describe('Testing Ghost application Create new Page with three elements', () => 
     cy.get('[name="identification"]').type(user);
     cy.get('[name="password"]').type(password);
     cy.wait(1000);
+    cy.screenshot();
     cy.get('[type="submit"]').click();
     cy.wait(5000);
   }
 
   function ClickLinkPage(){
+    cy.screenshot();
     cy.get('[href="#/pages/"]').click();
     cy.wait(1000);
   }
 
   function ClickButtonNewPage(){
+    cy.screenshot();
     cy.get('[href="#/editor/page/"]').click();
     cy.wait(2000);
   }
 
   function FillTitleNewPage(title){
-    cy.get('[class="gh-editor-post-status"]', { timeout: 5000 }).should('be.visible');
-    cy.get('[placeholder="Page title"]').type(title);
+    cy.get('[class="flex items-center pl4 pr4 f8 nudge-left--1 h9 br2 br--right bg-white"]', { timeout: 5000 }).should('be.visible');
+    cy.get('[placeholder="Page Title"]').type(title);
   }
 
   function FillTextArticleNewPage(text){
@@ -68,8 +61,10 @@ describe('Testing Ghost application Create new Page with three elements', () => 
 
   function ValidateNewPageCreation(title){
     cy.wait(10000);
+    cy.screenshot();
     cy.get('[href="#/pages/"]').click();
     cy.wait(2000);
+    cy.screenshot();
     cy.get('h3', { timeout: 10000 }).contains(title).should('be.visible');
   }
 
@@ -81,6 +76,11 @@ describe('Testing Ghost application Create new Page with three elements', () => 
   function SelectToggleElement(){
     cy.wait(2000);
     cy.get('[title="Toggle"]').click();
+  }
+
+  function SelectGalleryElement(){
+    cy.wait(2000);
+    cy.get('[title="Gallery"]').click();
   }
 
   function SelectDividerElement(){
@@ -104,9 +104,9 @@ describe('Testing Ghost application Create new Page with three elements', () => 
   }
 
   function MoveToNextElement(){
-    cy.get('[class="ember-application gh-body-fullscreen"]').type('{esc}');
+    cy.get('[class="ember-application"]').type('{esc}');
     cy.wait(2000);
-    cy.get('[class="ember-application gh-body-fullscreen"]').type('{enter}');
+    cy.get('[class="ember-application"]').type('{enter}');
   }
 
   function FillTextButtonElement(){

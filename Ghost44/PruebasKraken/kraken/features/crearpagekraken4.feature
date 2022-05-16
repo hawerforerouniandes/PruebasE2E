@@ -2,7 +2,7 @@ Feature: Crea una pagina en la aplicacion Ghost y publicarla
 
 @user1 @web
 Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web y la publico
-    Given I navigate to page "http://localhost:2368/ghost/#/signin"
+    Given I navigate to page "<URLAMBIENTE>"
     And I wait for 5 seconds
     When I enter email "<USERNAME1>"
     And I enter password "<PASSWORD1>"
@@ -17,6 +17,10 @@ Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web y la publ
     And I fill title of new page "<TITLEPAGE>"
     And I wait for 5 seconds
     And I fill new article in the new page "<ARTICLE>"
+    And I select the list of elements
+    And I wait for 2 seconds
+    And I select the divider element
+    And I wait for 2 seconds
     And I select the list of elements
     And I wait for 2 seconds
     And I select the youtube link element

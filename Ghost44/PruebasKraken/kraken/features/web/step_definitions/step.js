@@ -1,17 +1,19 @@
+const fs = require('fs');
 const { Given, When, Then } = require('@cucumber/cucumber');
 
+
 When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('#ember8');
+    let element = await this.driver.$('[name="identification"]');
     return await element.setValue(email);
 });
 
 When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('#ember10');
+    let element = await this.driver.$('[name="password"]');
     return await element.setValue(password);
 });
 
 When('I click login', async function() {
-    let element = await this.driver.$('#ember12');
+    let element = await this.driver.$('[type="submit"]');
     return await element.click();
 })
 
@@ -26,17 +28,17 @@ When('I enter title post {kraken-string}', async function (title) {
 });
 
 When('I click create post', async function() {
-    let element = await this.driver.$('.gh-koenig-editor-pane');
+    let element = await this.driver.$('.koenig-editor');
     return await element.click();
 })
 
 When('I click post edit {kraken-string}', async function(title) {
-    let element = await this.driver.$('a[title="Edit this post"]');
+    let element = await this.driver.$('h3='+title);
     return await element.click();
 })
 
 When('I click preview', async function() {
-    let element = await this.driver.$('.post-view-link');
+    let element = await this.driver.$('.gh-editor-preview-trigger');
     return await element.click();
 })
 
@@ -81,7 +83,7 @@ When('I click view', async function() {
 })
 
 When('I click sign in', async function() {
-    let element = await this.driver.$('#ember11');
+    let element = await this.driver.$('[type="submit"]');
     return await element.click();
 
 });
@@ -223,6 +225,25 @@ Then('I verify the URL published', async function() {
     return element.click();
 });
 
+Then('I click in preview button', async function() {
+    let element = await this.driver.$('[class="gh-btn gh-editor-preview-trigger"]');
+    return element.click();
+});
+
+Then('I click in phone icon', async function() {
+    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
+    return element[0].click();
+});
+
+Then('I click in twitter icon', async function() {
+    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
+    return element[1].click();
+});
+
+Then('I click in back button', async function() {
+    let element = await this.driver.$('[title="Close"]');
+    return element.click();
+});
 When('I enter title tag {kraken-string}', async function (title) {
     let element = await this.driver.$('input[name=name]');
     return await element.setValue(title);
@@ -257,3 +278,17 @@ When('I click confirm delete post', async function() {
     let element = await this.driver.$('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
     return await element.click();
 })
+
+
+When('I take screenshot of step {string} and scenario {string}', async function(step, scenario) {
+    return await this.driver.takeScreenshot().then(
+        function(image) {
+            if (!fs.existsSync(`./regression/${scenario}`)){
+                fs.mkdirSync(`./regression/${scenario}`, { recursive: true });
+            }
+            fs.writeFileSync(`./regression/${scenario}/${step}.png`, image, 'base64');
+        }
+    );
+   
+})
+

@@ -1,12 +1,12 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
-When('I enter email {kraken-string}', async function(email) {
-    let element = await this.driver.$('[type="email"]');
+When('I enter email {kraken-string}', async function (email) {
+    let element = await this.driver.$('[name="identification"]');
     return await element.setValue(email);
 });
 
-When('I enter password {kraken-string}', async function(password) {
-    let element = await this.driver.$('[type="password"]');
+When('I enter password {kraken-string}', async function (password) {
+    let element = await this.driver.$('[name="password"]');
     return await element.setValue(password);
 });
 
@@ -20,7 +20,7 @@ When('I click posts', async function() {
     return await element.click();
 })
 
-When('I enter title post {kraken-string}', async function(title) {
+When('I enter title post {kraken-string}', async function (title) {
     let element = await this.driver.$('textarea');
     return await element.setValue(title);
 });
@@ -70,7 +70,7 @@ When('I click input url', async function() {
     return await element.click();
 })
 
-When('I enter url youtube {kraken-string}', async function(url) {
+When('I enter url youtube {kraken-string}', async function (url) {
     let element = await this.driver.$('input[name=url]');
     return await element.setValue(url);
 });
@@ -99,12 +99,12 @@ When('I click new page', async function() {
 });
 
 Then('I wait for {string}', async function(validation) {
-    let element = await this.driver.$('[class="gh-editor-post-status"]');
+    let element = await this.driver.$('[aria-expanded="false"]');
     return await element.waitForExist({ timeout: 5000 });
 });
 
 Then('I fill title of new page {kraken-string}', async function(title) {
-    let element = await this.driver.$('[placeholder="Page title"]');
+    let element = await this.driver.$('[placeholder="Page Title"]');
     return await element.setValue(title);
 
 });
@@ -112,7 +112,7 @@ Then('I fill title of new page {kraken-string}', async function(title) {
 Then('I fill new article in the new page {kraken-string}', async function(article) {
     let element = await this.driver.$('[data-kg="editor"]');
     await element.setValue(article);
-    return this.driver.keys("Enter");
+    return this.driver.keys("Enter"); 
 });
 
 Then('I return to list of pages', async function() {
@@ -156,6 +156,12 @@ Then('I select the youtube link element', async function() {
 
 });
 
+Then('I select the Gallery element', async function() {
+    let element = await this.driver.$('[title="Gallery"]');
+    return await element.click();
+
+});
+
 Then('I fill the header of toogle element', async function() {
     let element = await this.driver.$('[data-placeholder="Toggle header"]');
     return await element.setValue('ejemplo');
@@ -165,13 +171,13 @@ Then('I fill the header of toogle element', async function() {
 Then('I fill the collapsible of toogle element', async function() {
     let element = await this.driver.$('[data-placeholder="Collapsible content"]');
     await element.setValue('persona1');
-    return this.driver.keys("Enter");
+    return this.driver.keys("Enter"); 
 
 });
 
 Then('I move to the next element', async function() {
     await this.driver.keys("Escape")
-    return this.driver.keys("Enter");
+    return this.driver.keys("Enter"); 
 
 });
 
@@ -196,34 +202,58 @@ Then('I select left position button element', async function() {
 Then('I fill the youtube link {kraken-string}', async function(link) {
     let element = await this.driver.$('[placeholder="Paste URL to add embedded content..."]');
     await element.setValue(link);
-    return this.driver.keys("Enter");
+    return this.driver.keys("Enter"); 
 
 });
 
 Then('I select the settings button', async function() {
-    let element = await this.driver.$('[class="settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon"]');
+    let element = await this.driver.$('[title="Settings"]');
     await element.click();
 
 });
 
 Then('I select the publish deplegable', async function() {
-    let element = await this.driver.$('[aria-expanded="false"]');
+    let element = await this.driver.$('[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]');
     await element.click();
 
 });
 
 Then('I select the publish button', async function() {
-    let element = await this.driver.$('[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]');
+    let element = await this.driver.$('[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]');
     await element.click();
 
 });
 
 Then('I verify the URL published', async function() {
+    let element = await this.driver.$('[class="ghost-url-preview description ember-view"]');
+    return element.click();
+});
+
+Then('I click in close button', async function() {
+    let element = await this.driver.$('[aria-label="Close"]');
+    return element.click();
+});
+
+Then('I click in preview button', async function() {
     let element = await this.driver.$('[class="post-view-link"]');
     return element.click();
 });
 
-When('I enter title tag {kraken-string}', async function(title) {
+Then('I click in phone icon', async function() {
+    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
+    return element[0].click();
+});
+
+Then('I click in twitter icon', async function() {
+    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
+    return element[1].click();
+});
+
+Then('I click in back button', async function() {
+    let element = await this.driver.$('[title="Close"]');
+    return element.click();
+});
+When('I enter title tag {kraken-string}', async function (title) {
     let element = await this.driver.$('input[name=name]');
     return await element.setValue(title);
 });
