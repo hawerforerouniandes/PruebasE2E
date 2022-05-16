@@ -13,23 +13,14 @@ async function executeTest(){
     let datetime = new Date().toISOString().replace(/:/g,".");
     var nroStep = 9;
     for(var i = 1; i<= nroStep; i++){
-        
-        if (!fs.existsSync(`./results/${datetime}`)){
-            fs.mkdirSync(`./results/${datetime}`, { recursive: true });
+        var folder = `page-1-${datetime}`;
+        if (!fs.existsSync(`./results/${folder}`)){
+            fs.mkdirSync(`./results/${folder}`, { recursive: true });
         }
-        //Launch the current browser context
-        /*const browser = await playwright[b].launch({headless: true, viewport: {width:viewportWidth, height:viewportHeight}});
-        const context = await browser.newContext();
-        const page = await context.newPage(); 
-        await page.goto(config.url);
-        await page.screenshot({ path: `./results/${datetime}/before-${b}.png` });
-        await page.click('#generate');
-        await page.screenshot({ path: `./results/${datetime}/after-${b}.png` });
-        await browser.close();*/
         
         const data = await compareImages(
-            fs.readFileSync(`../Ghost34/PruebasKraken/kraken/regression/post-1/${i}.png`),
-            fs.readFileSync(`../Ghost44/PruebasKraken/kraken/regression/post-1/${i}.png`),
+            fs.readFileSync(`../Ghost34/PruebasKraken/kraken/regression/page-1/${i}.png`),
+            fs.readFileSync(`../Ghost44/PruebasKraken/kraken/regression/page-1/${i}.png`),
             options
         );
         resultInfo[i] = {
@@ -40,12 +31,12 @@ async function executeTest(){
             diffBounds: data.diffBounds,
             analysisTime: data.analysisTime
         }
-        fs.writeFileSync(`./results/${datetime}/compare-${i}.png`, data.getBuffer());
+        fs.writeFileSync(`./results/${folder}/compare-${i}.png`, data.getBuffer());
 
     }
     
-    fs.writeFileSync(`./results/${datetime}/report.html`, createReport(datetime, resultInfo));
-    fs.copyFileSync('./index.css', `./results/${datetime}/index.css`);
+    fs.writeFileSync(`./results/${folder}/report.html`, createReport(datetime, resultInfo));
+    fs.copyFileSync('./index.css', `./results/${folder}/index.css`);
 
     console.log('------------------------------------------------------------------------------------')
     console.log("Execution finished. Check the report under the results folder")
