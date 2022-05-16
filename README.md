@@ -69,13 +69,22 @@
 >* Actualizar el archivo ```properties.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas, con rol administrador.
 
 ## Resemble.js
-- Ubicarse en un directorio personal con el comando ```cd <ruta>```
-- Cree un subdirectorio vacío con el comando ```mkdir <nombre>``` y ubicarse en el
-- Crear un proyecto con el comando ```npm init```
-- En este directorio del proyecto debe crear un archivo llamado ```index.js```  que contendrá el código fuente para realizar la prueba de regresión visual 
-- En este directorio del proyecto debe crear un archivo llamado ```index.js```  que contendrá el código fuente para realizar la prueba de regresión visual 
-- Crear un archivo ```config.json``` que le permitirá establecer los parámetros requeridos para la prueba.
+>### Configuración proyecto en blanco ###
 
+>* Ubicarse en un directorio personal con el comando ```cd <ruta>```
+>* Cree un subdirectorio vacío con el comando ```mkdir <nombre>``` y ubicarse en el
+>* Crear un proyecto con el comando ```npm init```
+>* En este directorio del proyecto debe crear un archivo llamado ```index.js```  que contendrá el código fuente para realizar la prueba de regresión visual 
+>* En este directorio del proyecto debe crear un archivo llamado ```index.js```  que contendrá el código fuente para realizar la prueba de regresión visual 
+>* Crear un archivo ```config.json``` que le permitirá establecer los parámetros requeridos para la prueba.
+
+- Descargarb el proyecto ```esemble``` ubicado en la raiz del repositorio
+- Ubicarse en el proyecto descargado
+- Ejecutar el comado ```npm install```
+- Ejecutar las pruebas de ejecución por su nombre con el comado ```node <nombre-de-la-prueba>.js```
+
+
+  
 
 # Funcionalidades bajo prueba
 
