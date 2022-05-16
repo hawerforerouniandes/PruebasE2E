@@ -22,10 +22,8 @@ describe('Testing Ghost application Create new Page with three elements', () => 
            SelectListOfElements();
            SelectYoutubeElement();
            FillYoutubeLink("https://www.youtube.com/watch?v=-OwPzzK_CEw");
-           SelectPublishDesplegable();
-           SelectPublishButton();
            SelectSettingsButton();
-           VerifyURLPublished();
+           ClickPreviewButton();
            ValidateNewPageCreation(title);
        })
     })
@@ -141,17 +139,45 @@ describe('Testing Ghost application Create new Page with three elements', () => 
 
   function SelectPublishDesplegable(){
     cy.wait(2000);
-    cy.get('[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]').click();
-    cy.screenshot();
+    cy.get('[aria-expanded="false"]').click();
   }
 
   function SelectPublishButton(){
     cy.wait(2000);
-    cy.get('[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]').click();
+    cy.get('[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
   }
 
   function VerifyURLPublished(){
     cy.wait(2000);
-    cy.get('[class="ghost-url-preview description ember-view"]').click();
+    cy.get('[class="post-view-link"]').click();
+  }
+
+  function ClickPreviewButton(){
+    cy.wait(2000);
+    cy.get('[class="post-view-link"]').click();
+    cy.screenshot();
+  }
+
+  function ClickPhoneIcon(){
+    cy.wait(5000);
+    cy.get('[class="gh-btn  gh-post-preview-mode"]').each(($el, index, $list) => {
+      if(index == 0){
+        cy.wrap($el).click();
+      }
+    });
+  }
+
+  function ClickTwitterIcon(){
+    cy.wait(5000);
+    cy.get('[class="gh-btn  gh-post-preview-mode"]').each(($el, index, $list) => {
+      if(index == 1){
+        cy.wrap($el).click();
+      }
+    });
+  }
+
+  function ClickBackButton(){
+    cy.wait(5000);
+    cy.get('[title="Close"]').click();
   }
 

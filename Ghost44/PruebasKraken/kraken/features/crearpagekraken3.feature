@@ -19,6 +19,10 @@ Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web con un vi
     And I fill new article in the new page "<ARTICLE>"
     And I select the list of elements
     And I wait for 2 seconds
+    And I select the divider element
+    And I wait for 2 seconds
+    And I select the list of elements
+    And I wait for 2 seconds
     And I select the youtube link element
     And I wait for 2 seconds
     And I fill the youtube link "<URLLINK>"
