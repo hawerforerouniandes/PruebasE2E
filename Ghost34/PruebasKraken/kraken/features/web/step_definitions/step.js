@@ -1,20 +1,12 @@
 const fs = require('fs');
 const { Given, When, Then } = require('@cucumber/cucumber');
+const LoginPage =  require('./pageobjects/login.page');
 
-When('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('[name="identification"]');
-    return await element.setValue(email);
+When('I login {kraken-string} {kraken-string}', async function (email, password) {
+    await LoginPage.username(this.driver).setValue(email);
+    await LoginPage.password(this.driver).setValue(password);
+    return  await LoginPage.submit(this.driver).click();
 });
-
-When('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('[name="password"]');
-    return await element.setValue(password);
-});
-
-When('I click login', async function() {
-    let element = await this.driver.$('[type="submit"]');
-    return await element.click();
-})
 
 When('I click posts', async function() {
     let element = await this.driver.$('#ember12');
@@ -80,12 +72,6 @@ When('I click view', async function() {
     let element = await this.driver.$('.gh-notification-actions');
     return await element.click();
 })
-
-When('I click sign in', async function() {
-    let element = await this.driver.$('[type="submit"]');
-    return await element.click();
-
-});
 
 When('I click pages', async function() {
     let element = await this.driver.$('[href="#/pages/"]');

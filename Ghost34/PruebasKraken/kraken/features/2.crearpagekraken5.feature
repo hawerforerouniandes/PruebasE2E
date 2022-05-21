@@ -4,10 +4,7 @@ Feature: Crea una pagina en la aplicacion Ghost y previsualizarla
 Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web y la previsualizo
     Given I navigate to page "<URLAMBIENTE>"
     And I wait for 5 seconds
-    When I enter email "<USERNAME1>"
-    And I enter password "<PASSWORD1>"
-    And I wait for 2 seconds
-    And I click sign in
+    And I login "<EMAIL>" "<PASSWORD>"
     And I wait for 10 seconds
     And I click pages
     And I wait for 2 seconds
