@@ -30,7 +30,7 @@ Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web y la prev
     And I select the settings button
     And I wait for 5 seconds
     And I click in preview button
-    And I wait for 5 seconds
+    And I wait for 10 seconds
     And I click in close button
     And I wait for 10 seconds
     And I return to list of pages
