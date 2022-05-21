@@ -15,5 +15,10 @@
     "TITLE_TAG": "Nuevo post con tag",
     "TITLE_DELETE": "Nuevo post para eliminar",
     "GHOST_URL": "https://ghost34-g3-gzh.herokuapp.com/ghost/#/signin",
-    "URLAMBIENTE":"http://localhost:2368/ghost/#/signin"
+    "URLAMBIENTE":"http://localhost:2368/ghost/#/signin",
+    "URL_POSTS":"http://localhost:2368/ghost/#/posts",
+    "URL_TAGS":"http://localhost:2368/ghost/#/tags",
+    "URL_EDITOR_POST":"http://localhost:2368/ghost/#/editor/post",
+    "URL_EDITOR_TAG":"http://localhost:2368/ghost/#/tags/new"
+
 }

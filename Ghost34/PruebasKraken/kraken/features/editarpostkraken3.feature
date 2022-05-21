@@ -2,7 +2,7 @@ Feature: Edit post ghost
 
 @user2 @web
 Scenario: Successful edit post video
- Given I navigate to page "http://localhost:2368/ghost/"
+ Given I navigate to page "<URLAMBIENTE>"
  And I wait for 2 seconds
  When I enter email "<EMAIL>"
  And I wait for 2 seconds
@@ -10,15 +10,15 @@ Scenario: Successful edit post video
  And I wait for 2 seconds
  And I click login
  And I wait for 2 seconds
- Given I navigate to page "http://localhost:2368/ghost/#/posts"
+ Given I navigate to page "<URL_POSTS>"
  And I wait for 2 seconds
- Given I navigate to page "http://localhost:2368/ghost/#/editor/post"
+ Given I navigate to page "<URL_EDITOR_POST>"
  And I wait for 2 seconds
  When I enter title post "<TITLE>"
  And I wait for 2 seconds
  And I click create post
  And I wait for 2 seconds
- Given I navigate to page "http://localhost:2368/ghost/#/posts"
+ Given I navigate to page "<URL_POSTS>"
  And I wait for 2 seconds
  And I click post edit "<TITLE>"
  And I wait for 2 seconds
