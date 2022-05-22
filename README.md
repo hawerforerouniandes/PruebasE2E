@@ -14,6 +14,7 @@
 |  04   | Escenario negativo con el objetivo de realizar login, crear, publicar un post para posteriormente elimanrlo en estado publicado                                                                                     | editarpostcypress5.spec.js | editarpostkraken5.feature | Hawer Alberto Forero Rey                                        |     :no_entry:     ||
 |  05   | Escenario positivo con el objetivo de crear el borrador de un post y verificar que se encuentre en la lista de post                                                                                                 | crearpostcypress1.spec.js  |                           | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) |         :no_entry:         ||
 |  06   | Escenario positivo con el objetivo de crear y publicar un post y verificar que se encuentre en la lista de post                                                                                                     | crearpostcypress2.spec.js  |                           | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) |         ⛔         ||
+|  07   | Escenario positivo con el objetivo de realizar login, crear y previsualizar un post con título y descripción aleatoria                                                                                                                      |  | 1.editarpostkraken6.feature | Hawer Alberto Forero Rey                                        |     ⛔      |(Kraken) Pool de datos aleatorio dinámico|
 
 
 ## Pages
