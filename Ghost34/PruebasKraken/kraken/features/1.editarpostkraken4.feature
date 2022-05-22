@@ -25,9 +25,9 @@ Scenario: Successful edit post tags
  And I wait for 2 seconds
  When I enter title post "<TITLE_TAG>"
  And I wait for 2 seconds
- And I click create post
+ And I click editor pane post
  And I wait for 2 seconds
  And I click menu publish
  And I wait for 2 seconds
- And I click publish
+ And I click post view link
  And I wait for 2 seconds

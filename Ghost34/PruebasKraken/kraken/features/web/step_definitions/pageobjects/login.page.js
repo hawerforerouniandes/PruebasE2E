@@ -1,5 +1,3 @@
-// login.page.js
-
 module.exports = class LoginPage {
 
     static username (_driver) {

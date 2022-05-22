@@ -16,7 +16,7 @@ Scenario: Successful create publish delete post
  And I wait for 2 seconds
  And I click menu publish
  And I wait for 2 seconds
- And I click publish
+ And I click post view link
  And I wait for 2 seconds
  And I click post settings
  And I wait for 10 seconds
