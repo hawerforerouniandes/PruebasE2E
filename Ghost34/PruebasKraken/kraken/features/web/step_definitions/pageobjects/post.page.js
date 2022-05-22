@@ -57,5 +57,9 @@ module.exports = class PostPage {
         return _driver.$('input[name=post-setting-meta-title]');
     }
 
+    static meta_description (_driver) {
+        return _driver.$('textarea[name=post-setting-meta-description]');
+    }
+
 
 }

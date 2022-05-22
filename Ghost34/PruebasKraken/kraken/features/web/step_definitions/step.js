@@ -93,6 +93,11 @@ When('I enter meta title {kraken-string}', async function (title) {
     return await PostPage.meta_title(this.driver).setValue(title);
 });
 
+When('I enter meta description', async function () {
+    var texto = faker.lorem.paragraph();
+    return await PostPage.meta_description(this.driver).setValue(texto);
+});
+
 Then('I wait for result post {kraken-string}', async function(validation) {
     return await PostPage.posts_list_item(this.driver, validation).waitForExist({ timeout: 5000 });
 });

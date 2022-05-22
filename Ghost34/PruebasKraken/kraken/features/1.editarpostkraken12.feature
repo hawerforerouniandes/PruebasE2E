@@ -1,7 +1,7 @@
 Feature: Edit post ghost
 
 @user2 @web
-Scenario: Successful register publish post meta data title
+Scenario: Successful register publish post meta data description
  Given I navigate to page "<URLAMBIENTE>"
  And I login "<EMAIL>" "<PASSWORD>"
  And I wait for 2 seconds
@@ -19,7 +19,12 @@ Scenario: Successful register publish post meta data title
  And I wait for 2 seconds
  When I enter meta title "$name_1"
  And I wait for 2 seconds
+ When I enter meta description
  And I click editor pane post
+ And I wait for 2 seconds
+ And I click menu publish
+ And I wait for 2 seconds
+ And I click publish button
  And I wait for 2 seconds
  Given I navigate to page "<URL_POSTS>"
  And I wait for 2 seconds

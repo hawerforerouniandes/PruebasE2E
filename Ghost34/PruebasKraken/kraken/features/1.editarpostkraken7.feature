@@ -22,7 +22,7 @@ Scenario: Successful edit publish post a priori title
  And I click editor pane post
  And I wait for 2 seconds
  Given I navigate to page "<URL_POSTS>"
-
+ And I wait for 2 seconds
 
 
 

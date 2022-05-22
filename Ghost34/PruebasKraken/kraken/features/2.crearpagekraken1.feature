@@ -19,3 +19,4 @@ Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web
     And I return to list of pages
     And I wait for 5 seconds
     And I wait for result "<TITLEPAGE>"
+    And I wait for 2 seconds

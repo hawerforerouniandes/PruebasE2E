@@ -26,3 +26,4 @@ Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web con un vi
     And I wait for 10 seconds
     And I return to list of pages
     And I wait for result "<TITLEPAGE>"
+    And I wait for 2 seconds
