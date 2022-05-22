@@ -1,0 +1,19 @@
+{
+    "MinCharTitle":1,
+    "MaxCharTitle":255,
+    "SpecialCharacters":"$#.{}[]ñó~^!!??=()><°|@//\\\\%&¿¡*_;:",
+    "MaxCharArticle":8000,
+    "MinCharUrllocalHost":2,
+    "MaxCharUrllocalHost":7000,
+    "MinCharTagPage":1,
+    "MaxCharTagPage":191,
+    "MinCharExcerpt":1,
+    "MaxCharExcerpt":300,
+    "MinCanonicalURL":1,
+    "MaxCanonicalURL":2000,
+    "TrueCanonicalURL":"https://www.admagazine.com",
+    "MinTwitterTitle":1,
+    "MaxTwitterTitle":300,
+    "MinTwitterDesc":1,
+    "MaxTwitterDesc":500
+}
