@@ -27,10 +27,13 @@ When('I enter title post failure', async function () {
 });
 
 When('I enter paragraph post', async function () {
-    //return await PostPage.paragraph(this.driver).setValue(faker.lorem.paragraph);
     var texto = faker.lorem.paragraph();
-    let element = await this.driver.$('[data-kg="editor"]');
-    return await element.setValue(texto);
+    return await PostPage.paragraph(this.driver).setValue(texto);
+});
+
+When('I enter paragraph post a priori', async function () {
+    var texto = DataPost[getRandomInt(0, DataPost.length)].paragraph;
+    return await PostPage.paragraph(this.driver).setValue(texto);
 });
 
 When('I click editor pane post', async function() {
