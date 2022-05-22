@@ -3,6 +3,7 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const LoginPage =  require('./pageobjects/login.page');
 const PostPage =  require('./pageobjects/post.page');
 const { faker } = require('@faker-js/faker');
+const DataPostFailureTitle = require("./datapool/mock_data_post_failure_title.json");
 
 When('I login {kraken-string} {kraken-string}', async function (email, password) {
     await LoginPage.username(this.driver).setValue(email);
@@ -12,6 +13,11 @@ When('I login {kraken-string} {kraken-string}', async function (email, password)
 
 When('I enter title post {kraken-string}', async function (title) {
     return await PostPage.editor_title(this.driver).setValue(title);
+});
+
+When('I enter title post failure', async function () {
+    var titleFailure = DataPostFailureTitle[1].title;
+    return await PostPage.editor_title(this.driver).setValue(titleFailure);
 });
 
 When('I enter paragraph post', async function () {
