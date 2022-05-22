@@ -273,8 +273,8 @@ When('I click tags', async function() {
     return await element.click();
 })
 
-When('I click select tag', async function() {
-    let element = await this.driver.$('li=pruebas e2e');
+When('I click select tag {kraken-string}', async function(tag) {
+    let element = await this.driver.$('li='+tag);
     return await element.click();
 })
 

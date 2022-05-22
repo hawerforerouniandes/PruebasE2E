@@ -10,13 +10,13 @@ Scenario: Successful create publish delete post
  And I wait for 2 seconds
  Given I navigate to page "<URL_EDITOR_POST>"
  And I wait for 2 seconds
- When I enter title post "<TITLE_DELETE>"
+ When I enter title post "$name_1"
  And I wait for 2 seconds
- And I click create post
+ And I click editor pane post
  And I wait for 2 seconds
  And I click menu publish
  And I wait for 2 seconds
- And I click post view link
+ And I click publish button
  And I wait for 2 seconds
  And I click post settings
  And I wait for 10 seconds

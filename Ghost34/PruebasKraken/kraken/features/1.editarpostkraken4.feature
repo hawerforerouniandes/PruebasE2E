@@ -10,7 +10,7 @@ Scenario: Successful edit post tags
  And I wait for 2 seconds
  Given I navigate to page "<URL_EDITOR_TAG>"
  And I wait for 2 seconds
- When I enter title tag "<TAG>"
+ When I enter title tag "$name_1"
  And I wait for 2 seconds
  And I click create tag
  Given I navigate to page "<URL_POSTS>"
@@ -20,14 +20,14 @@ Scenario: Successful edit post tags
  And I click post settings
  And I wait for 2 seconds
  And I click tags
- And I wait for 3 seconds
- And I click select tag
+ And I wait for 5 seconds
+ And I click select tag "$$name_1"
  And I wait for 2 seconds
- When I enter title post "<TITLE_TAG>"
+ When I enter title post "$name_1"
  And I wait for 2 seconds
  And I click editor pane post
  And I wait for 2 seconds
  And I click menu publish
  And I wait for 2 seconds
- And I click post view link
+ And I click publish button
  And I wait for 2 seconds
