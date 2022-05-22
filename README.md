@@ -79,6 +79,14 @@
 | :---: | ---------------------------------------------------- | ------------------------- | ------ | ------------------------- | :--------: | :-------------------------------: |
 |  01   | Escenario positivo con el objetivo de realizar login | userLoginCypress1.spec.js |        | John Edwin Guerrero Ayala | :no_entry: |                                   |
 
+
+## Staff
+|  No.  |                     Descripción                      |          Cypress          | Kraken |        Responsable        | Regresión  | Estrategia de generación de datos |
+| :---: | ---------------------------------------------------- | ------------------------- | ------ | ------------------------- | :--------: | :-------------------------------: |
+|  01   | Escenario negativo con el objetivo de enviar invitación a otro usuario con un correo invalido y verificar que se muestre el mensaje de error.  | creartagcypress3.spec.js  |        | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) |         ⛔          | 
+|  02   | Escenario positivo con el objetivo de enviar una invitación a otro usuario con un correo valido y verificar que se encuentre en la lista de invitados   | creartagcypress3.spec.js  |        | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) |         ⛔          | 
+
+
 # Configuración de herramientas
 ## Ghost
 - Crear un workspace personal y en la raiz ejecutar el siguiente comando
