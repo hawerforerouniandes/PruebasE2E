@@ -4,6 +4,7 @@ const LoginPage =  require('./pageobjects/login.page');
 const PostPage =  require('./pageobjects/post.page');
 const { faker } = require('@faker-js/faker');
 const DataPostFailureTitle = require("./datapool/mock_data_post_failure_title.json");
+const DataPost = require("./datapool/mock_data_post.json");
 
 When('I login {kraken-string} {kraken-string}', async function (email, password) {
     await LoginPage.username(this.driver).setValue(email);
@@ -13,6 +14,11 @@ When('I login {kraken-string} {kraken-string}', async function (email, password)
 
 When('I enter title post {kraken-string}', async function (title) {
     return await PostPage.editor_title(this.driver).setValue(title);
+});
+
+When('I enter title post a priori', async function () {
+    var dataTitle = DataPost[getRandomInt(0, DataPost.length)].title;
+    return await PostPage.editor_title(this.driver).setValue(dataTitle);
 });
 
 When('I enter title post failure', async function () {
@@ -65,6 +71,11 @@ When('I click input url', async function() {
 
 When('I enter url youtube {kraken-string}', async function (url) {
     return await PostPage.input_url(this.driver).setValue(url);
+});
+
+When('I enter url youtube a priori', async function () {
+    var dataVideo = DataPost[getRandomInt(0, DataPost.length)].video;
+    return await PostPage.input_url(this.driver).setValue(dataVideo);
 });
 
 When('I click view', async function() {
@@ -289,3 +300,9 @@ When('I take screenshot of step {string} and scenario {string}', async function(
     );
    
 })
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+};
