@@ -5,6 +5,7 @@ const PostPage =  require('./pageobjects/post.page');
 const { faker } = require('@faker-js/faker');
 const DataPostFailureTitle = require("./datapool/mock_data_post_failure_title.json");
 const DataPost = require("./datapool/mock_data_post.json");
+const MetaData = require("./datapool/mock_meta_data.json");
 
 When('I login {kraken-string} {kraken-string}', async function (email, password) {
     await LoginPage.username(this.driver).setValue(email);
@@ -96,6 +97,14 @@ When('I enter meta title {kraken-string}', async function (title) {
 When('I enter meta description', async function () {
     var texto = faker.lorem.paragraph();
     return await PostPage.meta_description(this.driver).setValue(texto);
+});
+
+Then('I enter meta data a priori', async function () {
+    var randomInt = getRandomInt(0, MetaData.length);
+    var dataTitle = MetaData[randomInt].title;
+    var dataDescription = MetaData[randomInt].description;
+    await PostPage.meta_title(this.driver).setValue(dataTitle);
+    return await PostPage.meta_description(this.driver).setValue(dataDescription);
 });
 
 Then('I wait for result post {kraken-string}', async function(validation) {
