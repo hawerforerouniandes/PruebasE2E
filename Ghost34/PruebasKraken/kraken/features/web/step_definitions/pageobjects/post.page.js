@@ -46,7 +46,15 @@ module.exports = class PostPage {
     }
 
     static paragraph (_driver) {
-        return _driver.$('[data-kg="editor');
+        return _driver.$('[data-kg="editor"]');
+    }
+
+    static meta_data_open (_driver) {
+        return _driver.$('b=Meta data');
+    }
+
+    static meta_title (_driver) {
+        return _driver.$('input[name=post-setting-meta-title]');
     }
 
 

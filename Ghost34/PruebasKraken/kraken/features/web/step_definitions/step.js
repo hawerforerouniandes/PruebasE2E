@@ -85,6 +85,14 @@ When('I click view', async function() {
     return await PostPage.notification_actions(this.driver).click();
 })
 
+When('I click post meta data', async function() {
+    return await PostPage.meta_data_open(this.driver).click();
+})
+
+When('I enter meta title {kraken-string}', async function (title) {
+    return await PostPage.meta_title(this.driver).setValue(title);
+});
+
 Then('I wait for result post {kraken-string}', async function(validation) {
     return await PostPage.posts_list_item(this.driver, validation).waitForExist({ timeout: 5000 });
 });
