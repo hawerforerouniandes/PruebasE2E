@@ -45,4 +45,9 @@ module.exports = class PostPage {
         return _driver.$('input[name=url]');
     }
 
+    static paragraph (_driver) {
+        return _driver.$('p[data-koenig-dnd-droppable="true"]');
+    }
+
+
 }

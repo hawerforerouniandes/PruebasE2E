@@ -2,6 +2,7 @@ const fs = require('fs');
 const { Given, When, Then } = require('@cucumber/cucumber');
 const LoginPage =  require('./pageobjects/login.page');
 const PostPage =  require('./pageobjects/post.page');
+const { faker } = require('@faker-js/faker');
 
 When('I login {kraken-string} {kraken-string}', async function (email, password) {
     await LoginPage.username(this.driver).setValue(email);
@@ -11,6 +12,13 @@ When('I login {kraken-string} {kraken-string}', async function (email, password)
 
 When('I enter title post {kraken-string}', async function (title) {
     return await PostPage.editor_title(this.driver).setValue(title);
+});
+
+When('I enter paragraph post', async function () {
+    //return await PostPage.paragraph(this.driver).setValue(faker.lorem.paragraph);
+    var texto = faker.lorem.paragraph();
+    let element = await this.driver.$('[data-kg="editor"]');
+    return await element.setValue(texto);
 });
 
 When('I click editor pane post', async function() {
@@ -56,6 +64,10 @@ When('I enter url youtube {kraken-string}', async function (url) {
 When('I click view', async function() {
     return await PostPage.notification_actions(this.driver).click();
 })
+
+Then('I wait for result post {kraken-string}', async function(validation) {
+    return await PostPage.posts_list_item(this.driver, validation).waitForExist({ timeout: 5000 });
+});
 
 When('I click pages', async function() {
     let element = await this.driver.$('[href="#/pages/"]');
