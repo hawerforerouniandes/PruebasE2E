@@ -15,6 +15,10 @@ class PostEditorSettingsPage {
         return cy.get('[class="close settings-menu-header-action"]')
     }
 
+    get wordCount() {
+        return cy.get('[class="word-count"]')
+    }
+
     selectMetaData() {
         this.metaDataButton.click()
     }
@@ -29,6 +33,10 @@ class PostEditorSettingsPage {
 
     closeSettingsMenu() {
         this.closeButton.click()
+    }
+
+    isWordCountExceded() {
+        this.wordCount.should('have.css', 'color', 'rgb(226, 84, 64)')
     }
 
 }
