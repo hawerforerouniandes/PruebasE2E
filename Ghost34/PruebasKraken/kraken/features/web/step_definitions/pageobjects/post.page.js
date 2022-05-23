@@ -61,5 +61,9 @@ module.exports = class PostPage {
         return _driver.$('textarea[name=post-setting-meta-description]');
     }
 
+    static canonical_Url (_driver) {
+        return _driver.$('input[name=post-setting-canonicalUrl]');
+    }
+
 
 }

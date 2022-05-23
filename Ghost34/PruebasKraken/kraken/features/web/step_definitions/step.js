@@ -107,6 +107,16 @@ Then('I enter meta data a priori', async function () {
     return await PostPage.meta_description(this.driver).setValue(dataDescription);
 });
 
+Then('I enter meta data url a priori', async function () {
+    var randomInt = getRandomInt(0, MetaData.length);
+    var dataTitle = MetaData[randomInt].title;
+    var dataDescription = MetaData[randomInt].description;
+    var dataUrl = MetaData[randomInt].url;
+    await PostPage.meta_title(this.driver).setValue(dataTitle);
+    await PostPage.canonical_Url(this.driver).setValue(dataUrl);
+    return await PostPage.meta_description(this.driver).setValue(dataDescription);
+});
+
 Then('I wait for result post {kraken-string}', async function(validation) {
     return await PostPage.posts_list_item(this.driver, validation).waitForExist({ timeout: 5000 });
 });
