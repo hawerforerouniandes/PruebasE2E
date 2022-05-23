@@ -2,6 +2,9 @@ const fs = require('fs');
 const { Given, When, Then } = require('@cucumber/cucumber');
 const LoginPage =  require('./pageobjects/login.page');
 const PostPage =  require('./pageobjects/post.page');
+const TagPage =  require('./pageobjects/tag.page');
+const Page =  require('./pageobjects/page.page');
+
 const { faker } = require('@faker-js/faker');
 const DataPostFailureTitle = require("./datapool/mock_data_post_failure_title.json");
 const DataPost = require("./datapool/mock_data_post.json");
@@ -122,90 +125,73 @@ Then('I wait for result post {kraken-string}', async function(validation) {
 });
 
 When('I click pages', async function() {
-    let element = await this.driver.$('[href="#/pages/"]');
-    return await element.click();
+    return await Page.pages_url(this.url).click();
 
 });
 
 When('I click new page', async function() {
-    let element = await this.driver.$('[href="#/editor/page/"]');
-    return await element.click();
+    return await Page.new_page_url(this.driver).click();
 
 });
 
 Then('I wait for {string}', async function(validation) {
-    let element = await this.driver.$('[aria-expanded="false"]');
-    return await element.waitForExist({ timeout: 5000 });
+    return await Page.aria_expanded_false(this.driver).waitForExist({ timeout: 5000 });
 });
 
 Then('I fill title of new page {kraken-string}', async function(title) {
-    let element = await this.driver.$('[placeholder="Page Title"]');
-    return await element.setValue(title);
+    return await Page.title(this.driver).setValue(title);
 
 });
 
 Then('I fill new article in the new page {kraken-string}', async function(article) {
-    let element = await this.driver.$('[data-kg="editor"]');
-    await element.setValue(article);
+    await Page.article(this.driver).setValue(article);
     return this.driver.keys("Enter"); 
 });
 
 Then('I return to list of pages', async function() {
-    let element = await this.driver.$('[href="#/pages/"]');
-    return await element.click();
+    return await Page.pages_url(this.driver).click();
 
 });
 
 Then('I wait for result {kraken-string}', async function(validation) {
-    let element = await this.driver.$('h3=' + validation);
-    return await element.waitForExist({ timeout: 5000 });
+    return await Page.pages_list_item(this.driver).waitForExist({ timeout: 5000 });
 });
 
 Then('I select the list of elements', async function() {
-    let element = await this.driver.$('[aria-label="Add a card"]');
-    return await element.click();
+    return await Page.aria_label(this.driver, "Add a card").click();
 
 });
 
 Then('I select the toogle element', async function() {
-    let element = await this.driver.$('[title="Toggle"]');
-    return await element.click();
+    return await Page.title_name(this.driver, "Toggle").click();
 
 });
 
 Then('I select the divider element', async function() {
-    let element = await this.driver.$('[title="Divider"]');
-    return await element.click();
+    return await Page.title_name(this.driver, "Divider").click();
 
 });
 
 Then('I select the button element', async function() {
-    let element = await this.driver.$('[title="Button"]');
-    return await element.click();
-
+    return await Page.title_name(this.driver, "Button").click();
 });
 
 Then('I select the youtube link element', async function() {
-    let element = await this.driver.$('[title="YouTube"]');
-    return await element.click();
-
+    return await Page.title_name(this.driver, "YouTube").click();
 });
 
 Then('I select the Gallery element', async function() {
-    let element = await this.driver.$('[title="Gallery"]');
-    return await element.click();
+    return await Page.title_name(this.driver, "Gallery").click();
 
 });
 
 Then('I fill the header of toogle element', async function() {
-    let element = await this.driver.$('[data-placeholder="Toggle header"]');
-    return await element.setValue('ejemplo');
+    return await Page.data_placeholder(this.driver, "Toggle header").setValue('ejemplo');
 
 });
 
 Then('I fill the collapsible of toogle element', async function() {
-    let element = await this.driver.$('[data-placeholder="Collapsible content"]');
-    await element.setValue('persona1');
+    await Page.data_placeholder(this.driver, "Collapsible content").setValue('persona1');
     return this.driver.keys("Enter"); 
 
 });
@@ -217,110 +203,89 @@ Then('I move to the next element', async function() {
 });
 
 Then('I fill text the button element', async function() {
-    let element = await this.driver.$('#button-text-input');
-    return await element.setValue('Ir');
+    return await Page.button_text_input(this.driver).setValue('Ir');
 
 });
 
 Then('I fill text the URL button element', async function() {
-    let element = await this.driver.$('#button-url-input');
-    await element.click();
-    let element2 = await this.driver.$('[title="Homepage"]');
-    return element2.click();
+    await Page.button_url_input(this.driver).click();
+    return Page.title_name(this.driver, "Homepage").click();
 });
 
 Then('I select left position button element', async function() {
-    let element = await this.driver.$('[title="Left-align content"]');
-    await element.click();
+    await Page.title_name(this.driver, "Left-align content").click();
 });
 
 Then('I fill the youtube link {kraken-string}', async function(link) {
-    let element = await this.driver.$('[placeholder="Paste URL to add embedded content..."]');
-    await element.setValue(link);
+    await Page.data_placeholder(this.driver, "Paste URL to add embedded content...").setValue(link);
     return this.driver.keys("Enter"); 
 
 });
 
 Then('I select the settings button', async function() {
-    let element = await this.driver.$('[title="Settings"]');
-    await element.click();
+    await Page.title_name(this.driver, "Settings").click();
 
 });
 
 Then('I select the publish deplegable', async function() {
-    let element = await this.driver.$('[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]');
-    await element.click();
+    await Page.publishmenu(this.driver).click();
 
 });
 
 Then('I select the publish button', async function() {
-    let element = await this.driver.$('[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]');
-    await element.click();
+    await Page.publishmenu_button(this.driver).click();
 
 });
 
 Then('I verify the URL published', async function() {
-    let element = await this.driver.$('[class="ghost-url-preview description ember-view"]');
-    return element.click();
+    return Page.class_name(this.driver, "ghost-url-preview description ember-view").click();
 });
 
 Then('I click in close button', async function() {
-    let element = await this.driver.$('[aria-label="Close"]');
-    return element.click();
+    return Page.aria_label(this.driver, "Close").click();
 });
 
 Then('I click in preview button', async function() {
-    let element = await this.driver.$('[class="post-view-link"]');
-    return element.click();
+    return Page.class_name(this.driver, "post-view-link" ).click();
 });
 
 Then('I click in phone icon', async function() {
-    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
-    return element[0].click();
+    return Page.class_name(this.driver, "gh-btn  gh-post-preview-mode")[0].click();
 });
 
 Then('I click in twitter icon', async function() {
-    let element = await this.driver.$$('[class="gh-btn  gh-post-preview-mode"]');
-    return element[1].click();
+    return Page.class_name(this.driver, "gh-btn  gh-post-preview-mode")[1].click();
 });
 
 Then('I click in back button', async function() {
-    let element = await this.driver.$('[title="Close"]');
-    return element.click();
+    return Page.title_name(this.driver, "Close").click();
 });
 When('I enter title tag {kraken-string}', async function (title) {
-    let element = await this.driver.$('input[name=name]');
-    return await element.setValue(title);
+    return await TagPage.name(this.driver).setValue(title);
 });
 
 When('I click create tag', async function() {
-    let element = await this.driver.$('.gh-btn.gh-btn-blue.gh-btn-icon.ember-view');
-    return await element.click();
+    return await TagPage.create_tag(this.driver).click();
 })
 
 When('I click post settings', async function() {
-    let element = await this.driver.$('button.post-settings');
-    return await element.click();
+    return await PostPage.post_settings(this.driver).click();
 })
 
 When('I click tags', async function() {
-    let element = await this.driver.$('.ember-power-select-trigger-multiple-input');
-    return await element.click();
+    return await TagPage.multiple_input(this.driver).click();
 })
 
 When('I click select tag {kraken-string}', async function(tag) {
-    let element = await this.driver.$('li='+tag);
-    return await element.click();
+    return await TagPage.tags_list_option(this.driver, tag).click();
 })
 
 When('I click delete post', async function() {
-    let element = await this.driver.$('button.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button');
-    return await element.click();
+    return await PostPage.delete_button(this.driver).click();
 })
 
 When('I click confirm delete post', async function() {
-    let element = await this.driver.$('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
-    return await element.click();
+    return await PostPage.delete_confirm(this.driver).click();
 })
 
 

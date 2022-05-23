@@ -22,7 +22,7 @@ Scenario: Successful edit post tags
  And I click tags
  And I wait for 5 seconds
  And I click select tag "$$name_1"
- And I wait for 2 seconds
+ And I wait for 8 seconds
  When I enter title post "$name_1"
  And I wait for 2 seconds
  And I click editor pane post

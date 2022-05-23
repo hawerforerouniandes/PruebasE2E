@@ -65,5 +65,16 @@ module.exports = class PostPage {
         return _driver.$('input[name=post-setting-canonicalUrl]');
     }
 
+    static post_settings (_driver) {
+        return _driver.$('button.post-settings');
+    }
+
+    static delete_button (_driver) {
+        return _driver.$('button.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button');
+    }
+
+    static delete_confirm (_driver) {
+        return _driver.$('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
+    }
 
 }
