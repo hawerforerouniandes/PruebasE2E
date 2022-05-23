@@ -105,9 +105,9 @@
 
 
 ## Login
-|  No.  |                     Descripción                      |          Cypress          | Kraken |        Responsable        | Regresión  | Estrategia de generación de datos |
-| :---: | ---------------------------------------------------- | ------------------------- | ------ | ------------------------- | :--------: | :-------------------------------: |
-|  01   | Escenario positivo con el objetivo de realizar login | userLoginCypress1.spec.js |        | John Edwin Guerrero Ayala | :no_entry: |                                   |
+|  No.  |                     Descripción                      |          Cypress          | Kraken |        Responsable        | Regresión  |           Estrategia de generación de datos            |
+| :---: | ---------------------------------------------------- | ------------------------- | ------ | ------------------------- | :--------: | :----------------------------------------------------: |
+|  01   | Escenario positivo con el objetivo de realizar login | userLoginCypress1.spec.js |        | John Edwin Guerrero Ayala | :no_entry: | (Cypress) Data pool específico ```fixtures/admin.js``` |
 
 
 ## Staff
