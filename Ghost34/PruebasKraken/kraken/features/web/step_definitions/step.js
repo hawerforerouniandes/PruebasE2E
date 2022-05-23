@@ -125,7 +125,7 @@ Then('I wait for result post {kraken-string}', async function(validation) {
 });
 
 When('I click pages', async function() {
-    return await Page.pages_url(this.url).click();
+    return await Page.pages_url(this.driver).click();
 
 });
 
@@ -154,7 +154,7 @@ Then('I return to list of pages', async function() {
 });
 
 Then('I wait for result {kraken-string}', async function(validation) {
-    return await Page.pages_list_item(this.driver).waitForExist({ timeout: 5000 });
+    return await Page.pages_list_item(this.driver, validation).waitForExist({ timeout: 5000 });
 });
 
 Then('I select the list of elements', async function() {

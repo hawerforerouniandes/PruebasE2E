@@ -12,11 +12,11 @@ Scenario: Como usuario 1 ingreso a la aplicacion y creo una pagina web
     And I wait for 2 seconds
     Then I wait for "Preview"
     And I wait for 2 seconds
-    And I fill title of new page "<TITLEPAGE>"
+    And I fill title of new page "$string_1"
     And I wait for 5 seconds
-    And I fill new article in the new page "<ARTICLE>"
+    And I fill new article in the new page "$name_1"
     And I wait for 10 seconds
     And I return to list of pages
     And I wait for 5 seconds
-    And I wait for result "<TITLEPAGE>"
+    And I wait for result "$$string_1"
     And I wait for 2 seconds
