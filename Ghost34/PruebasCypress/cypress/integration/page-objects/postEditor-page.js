@@ -17,6 +17,10 @@ class PostEditorPage {
         return cy.get('[class="gh-alert-content"]')
     }
 
+    get settingsButton() {
+        return cy.get('[class="post-settings"]')
+    }
+
     get publishButton() {
         return cy.get('.gh-publishmenu')
     }
@@ -50,6 +54,10 @@ class PostEditorPage {
 
     checkIfYouTubeFormDoesNotExist() {
         cardMenuPage.checkIfYouTubeFormDoesNotExist()
+    }
+
+    settingsButtonClick() {
+        this.settingsButton.click();
     }
 
     publishPage() {

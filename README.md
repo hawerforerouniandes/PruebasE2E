@@ -27,6 +27,7 @@
 |  17   | Escenario positivo con el objetivo de crear y publicar un post y verificar que se encuentre en la lista de post                                                 | crearpostcypress2.spec.js  |                              | [Jhon Sebastian Bohorquez Guerrero](https://github.com/jhonsbg) |         ⛔          |                                                                     |
 |  18   | Escenario positivo con el objetivo de realizar el login, crear un post con datos específicos de más de 255 caracteres, no debe permitir la publicación del post | crearPostCypress4.spec.js  |                              | John Edwin Guerrero Ayala                                       |     :no_entry:     |   (Cypress) Data pool específico ```fixtures/postsDataPool.js```    |
 |  19   | Escenario positivo con el objetivo de realizar el login, crear un post con un video de you tube                                                                 | crearPostCypress5.spec.js  |                              | John Edwin Guerrero Ayala                                       |     :no_entry:     |  (Cypress) Data pool específico ```fixtures/contentDataPool.js```   |
+|  20   | Escenario positivo con el objetivo de realizar el login, crear un post, agregar metadata con un título de menos de 70 caracteres                                                                 | crearPostCypress6.spec.js  |                              | John Edwin Guerrero Ayala                                       |     :no_entry:     |  (Cypress) Data pool genérico Faker.js    |
 
 
 
