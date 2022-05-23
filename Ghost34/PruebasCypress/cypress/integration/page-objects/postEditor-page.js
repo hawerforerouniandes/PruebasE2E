@@ -1,3 +1,5 @@
+import cardMenuPage from "./cardMenu-page"
+
 class PostEditorPage {
     get editorTitlePlaceholder() {
         return cy.get('[placeholder="Post Title"]')
@@ -35,6 +37,19 @@ class PostEditorPage {
         this.postText.first().clear()
         this.postText.first().type(postText);
         cy.screenshot();
+    }
+
+    addCardClick() {
+        this.addCardButton.click()
+    }
+
+    addYouTubeVideo(link) {
+        cardMenuPage.youtubeButton.click()
+        cardMenuPage.fillYouTubeCard(link)
+    }
+
+    checkIfYouTubeFormDoesNotExist() {
+        cardMenuPage.checkIfYouTubeFormDoesNotExist()
     }
 
     publishPage() {
