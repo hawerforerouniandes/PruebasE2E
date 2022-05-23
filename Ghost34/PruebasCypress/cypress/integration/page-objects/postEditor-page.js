@@ -11,6 +11,18 @@ class PostEditorPage {
         return cy.get('[aria-label="Add a card"]')
     }
 
+    get errorToast() {
+        return cy.get('[class="gh-alert-content"]')
+    }
+
+    get publishButton() {
+        return cy.get('.gh-publishmenu')
+    }
+
+    get confirmPublishButton() {
+        return cy.contains('Publish')
+    }
+
     updatePostTitle(postTitle, clearing = true) {
         if (clearing) {
             this.editorTitlePlaceholder.clear()
@@ -27,19 +39,28 @@ class PostEditorPage {
 
     publishPage() {
         //Publish page
-        cy.contains("Publish").click();
+        this.publishButton.click();
         cy.screenshot();
         cy.get('Footer').within(() => {
-            cy.contains("Publish").click();
+            this.confirmPublishButton.click();
             cy.contains("Update").should("be.visible");
         });
     }
 
-    updatePageAndConfirm() {
+    updatePostAndConfirm() {
         cy.contains("Update").click();
         cy.screenshot();
         cy.get('Footer').contains("Update").click();
         cy.get('Footer').contains("Update").should("be.visible");
+    }
+
+    checkPublishButtonDoesExist(visible = false) {
+        const visibility = visible ? "be.visible" : 'not.exist';
+        this.publishButton.should(visibility);
+    }
+
+    checkErrorToastIsVisible() {
+        this.errorToast.should("be.visible");
     }
 }
 
