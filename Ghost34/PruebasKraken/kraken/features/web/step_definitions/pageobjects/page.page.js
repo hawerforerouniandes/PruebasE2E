@@ -34,7 +34,7 @@ module.exports = class Page {
     }
 
     static data_placeholder (_driver, name) {
-        return _driver.$('[data-placeholder="'+name+'"]');
+        return _driver.$('[placeholder="'+name+'"]');
     }
 
     static button_text_input (_driver) {

@@ -9,6 +9,7 @@ const { faker } = require('@faker-js/faker');
 const DataPostFailureTitle = require("./datapool/mock_data_post_failure_title.json");
 const DataPost = require("./datapool/mock_data_post.json");
 const MetaData = require("./datapool/mock_meta_data.json");
+const DataPage = require("./datapool/mock_data_page.json");
 
 When('I login {kraken-string} {kraken-string}', async function (email, password) {
     await LoginPage.username(this.driver).setValue(email);
@@ -220,6 +221,12 @@ Then('I fill the youtube link {kraken-string}', async function(link) {
     await Page.data_placeholder(this.driver, "Paste URL to add embedded content...").setValue(link);
     return this.driver.keys("Enter"); 
 
+});
+
+When('I fill the youtube link a priori', async function () {
+    var dataVideo = DataPage[getRandomInt(0, DataPage.length)].video;
+    await Page.data_placeholder(this.driver, "Paste URL to add embedded content...").setValue(dataVideo);
+    return this.driver.keys("Enter");
 });
 
 Then('I select the settings button', async function() {
