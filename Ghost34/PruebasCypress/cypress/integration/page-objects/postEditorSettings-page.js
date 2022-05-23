@@ -16,7 +16,15 @@ class PostEditorSettingsPage {
     }
 
     get wordCount() {
-        return cy.get('[class="word-count"]')
+        return cy.get('[class="word-count"]').first()
+    }
+
+    get secondWordCount() {
+        return cy.get('[class="word-count"]').eq(1)
+    }
+
+    get metaDescription() {
+        return cy.get('[id="meta-description"]')
     }
 
     selectMetaData() {
@@ -27,6 +35,10 @@ class PostEditorSettingsPage {
         this.metaTitleTextField.type(title)
     }
 
+    updateMetaDescription(description) {
+        this.metaDescription.type(description)
+    }
+
     selectBackButton() {
         this.backButton.click()
     }
@@ -35,8 +47,14 @@ class PostEditorSettingsPage {
         this.closeButton.click()
     }
 
-    isWordCountExceded() {
-        this.wordCount.should('have.css', 'color', 'rgb(226, 84, 64)')
+    isWordCountExceded(hasColorChanged = true) {
+        const hasColor = hasColorChanged ? 'have.css' : 'not.have.css'
+        this.wordCount.should(hasColor, 'color', 'rgb(226, 84, 64)')
+    }
+
+    isMetaDescriptionWordCountExceded(hasColorChanged = true) {
+        const hasColor = hasColorChanged ? 'have.css' : 'not.have.css'
+        this.secondWordCount.should(hasColor, 'color', 'rgb(226, 84, 64)')
     }
 
 }

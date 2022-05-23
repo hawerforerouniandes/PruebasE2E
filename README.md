@@ -29,6 +29,7 @@
 |  19   | Escenario positivo con el objetivo de realizar el login, crear un post con un video de you tube                                                                 | crearPostCypress5.spec.js  |                              | John Edwin Guerrero Ayala                                       |     :no_entry:     |  (Cypress) Data pool específico ```fixtures/contentDataPool.js```   |
 |  20   | Escenario positivo con el objetivo de realizar el login, crear un post, agregar metadata con un título de menos de 70 caracteres                                | crearPostCypress6.spec.js  |                              | John Edwin Guerrero Ayala                                       |     :no_entry:     |                (Cypress) Data pool genérico Faker.js                |
 |  21   | Escenario negativo con el objetivo de realizar el login, crear un post, agregar metadata con un título de más de 70 caracteres                                  | crearPostCypress7.spec.js  |                              | John Edwin Guerrero Ayala                                       |     :no_entry:     |                (Cypress) Data pool genérico Faker.js                |
+|  22   | Escenario negativo con el objetivo de realizar el login, crear un post, agregar metadata con una descripción menor a 156 caracteres                             | crearPostCypress8.spec.js  |                              | John Edwin Guerrero Ayala                                       |     :no_entry:     |                (Cypress) Data pool genérico Faker.js                |
 
 ## Pages
 
