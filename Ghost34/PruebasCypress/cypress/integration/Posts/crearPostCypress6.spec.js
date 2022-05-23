@@ -18,7 +18,7 @@ describe('Testing positivo crear post', () => {
             })
     })
 
-    it('Crear post con titulo con menos de 255 caracteres', () => {
+    it('Crear post con meta data con menos de 70 caracteres', () => {
         const metaDataTitle = faker.hacker.adjective();
         postsDashboardPage.goToPostsDashBoard();
         postsDashboardPage.goToNewPostEditor();
