@@ -11,7 +11,7 @@ describe('Testing positivo crear tag', () => {
 
     it('Crear tag', () => {
 
-      const tupla = [faker.datatype.string(190)];
+      const tupla = [faker.datatype.string(10), faker.datatype.string(499)];
 
       // Login
       cy.get('@adminData').then(adminData => {
@@ -34,8 +34,11 @@ describe('Testing positivo crear tag', () => {
       cy.get('.tags-header').contains('New tag').click();
       cy.wait(1000);
       cy.get('#tag-name').focus();
-      //Name with 192 characters
+      //Name
       cy.get('#tag-name').type(tupla[0], {force: true, parseSpecialCharSequences: false} );
+      //Description with 500
+      cy.get('#tag-description').type(tupla[1], {force: true, parseSpecialCharSequences: false} );
+      //Save tag
       cy.get('header').find('section').contains('Save').click();
       cy.wait(1000);
 

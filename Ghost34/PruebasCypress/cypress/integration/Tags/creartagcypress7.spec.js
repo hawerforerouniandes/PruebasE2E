@@ -1,6 +1,6 @@
 const { faker } = require('@faker-js/faker');
 
-describe('Testing positivo crear tag', () => {
+describe('Testing negativo crear tag', () => {
     beforeEach(()=>{
       cy.fixture('admin').as('adminData')
       cy.fixture('site').then((siteData) => {
@@ -10,8 +10,6 @@ describe('Testing positivo crear tag', () => {
     })
 
     it('Crear tag', () => {
-
-      const tupla = [faker.datatype.string(190)];
 
       // Login
       cy.get('@adminData').then(adminData => {
@@ -34,16 +32,15 @@ describe('Testing positivo crear tag', () => {
       cy.get('.tags-header').contains('New tag').click();
       cy.wait(1000);
       cy.get('#tag-name').focus();
-      //Name with 192 characters
-      cy.get('#tag-name').type(tupla[0], {force: true, parseSpecialCharSequences: false} );
+      //Name
+      cy.get('#tag-name').type(faker.datatype.string(10), {force: true, parseSpecialCharSequences: false} );
+      //Description with 501
+      cy.get('#tag-description').type(faker.datatype.string(501), {force: true, parseSpecialCharSequences: false} );
+      //Save tag
       cy.get('header').find('section').contains('Save').click();
       cy.wait(1000);
 
-      //Tag list
-      cy.get('.gh-nav-top').contains('Tags').click();
-      cy.url().should("include", "/tags");
-
-      //Name tag validation in list
-      cy.get('.gh-main').children('section').contains(tupla[0]).first().should('be.visible');
+      //Error message validation
+      cy.get('#tag-description').parent().children('p').contains('Description cannot be longer than 500 characters.').should('be.visible');
     })
 })
