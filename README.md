@@ -43,7 +43,7 @@
 
 >### Condiciones iniciales para pruebas ###
 >* Actualizar el archivo ```properties.json``` con los datos de un usuario existente en la aplicación para poder realizar el proceso de pruebas, con rol administrador.
->* Dentro de la ruta ```feature/web/step_definitions``` se encuentra los ```pageobject``` y ```datapool```
+>* Dentro de la ruta ```feature/web/step_definitions``` se encuentra los ```pageobject``` y ```datapool``` generados previamente en el proyecto no es necesario realizar una ejecución adicional para utilizarlos
 
 ## Resemble.js
 >### Configuración proyecto en blanco ###
