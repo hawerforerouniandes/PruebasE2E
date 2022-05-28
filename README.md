@@ -4,6 +4,12 @@
 - Brayan Sebastian Hernandez Barrera
 - Jhon Sebastian Bohorquez Guerrero 
 
+# Estrategia final de pruebas
+- [Enlace descarga OneDrive](https://uniandes-my.sharepoint.com/:x:/g/personal/h_foreror_uniandes_edu_co/ETZxp7Jbjt1AknnFo27iBDoBwXB97qBLoW6n-MiJAFj7EA?e=pZQepX)
+- 
+# Video socialización de la estrategía
+- [Enlace descarga OneDrive](https://uniandes-my.sharepoint.com/:x:/g/personal/h_foreror_uniandes_edu_co/ETZxp7Jbjt1AknnFo27iBDoBwXB97qBLoW6n-MiJAFj7EA?e=pZQepX)
+- 
 # Pruebas exploratorias manuales (Semana 1)
 - [Enlace descarga OneDrive](https://uniandes-my.sharepoint.com/:x:/g/personal/h_foreror_uniandes_edu_co/ETZxp7Jbjt1AknnFo27iBDoBwXB97qBLoW6n-MiJAFj7EA?e=pZQepX)
 
