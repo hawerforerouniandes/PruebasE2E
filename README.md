@@ -4,6 +4,9 @@
 - Brayan Sebastian Hernandez Barrera
 - Jhon Sebastian Bohorquez Guerrero 
 
+# Pruebas exploratorias manuales
+- Enlace
+
 # Descripción de escenarios
 ## Posts
 |  No.  |                                                                           Descripción                                                                           |          Cypress           |            Kraken            |                           Responsable                           |     Regresión      |                  Estrategia de generación de datos                  |
