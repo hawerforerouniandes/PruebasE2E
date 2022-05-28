@@ -61,6 +61,9 @@
 - Ejecutar las pruebas de ejecución por su nombre con el comado ```node <nombre-de-la-prueba>.js```
 
 
+# Análisis de pros y contras de las herramientas
+  
+- [Enlace wiki del proyecto](https://github.com/hawerforerouniandes/PruebasE2E/wiki)
  
 # Funcionalidades bajo prueba
 
