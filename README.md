@@ -5,7 +5,7 @@
 - Jhon Sebastian Bohorquez Guerrero 
 
 # Estrategia final de pruebas
-- [Enlace descarga OneDrive](https://uniandes-my.sharepoint.com/:x:/g/personal/h_foreror_uniandes_edu_co/ETZxp7Jbjt1AknnFo27iBDoBwXB97qBLoW6n-MiJAFj7EA?e=pZQepX)
+- [Enlace descarga OneDrive](https://uniandes-my.sharepoint.com/:b:/g/personal/h_foreror_uniandes_edu_co/ESaDfKYXxMFCjCijPB_-aVwBTTbx2MQrZDYbV0tGKEs89A?e=zs7FKz)
 # Video socialización de la estrategía
 - [Enlace descarga OneDrive](https://uniandes-my.sharepoint.com/:v:/g/personal/h_foreror_uniandes_edu_co/ES9T3a1w3x1Dpraua4a_AIEBhOMkvOSsPdTIxgEvdvqqDA?e=McQZou)
 # Pruebas exploratorias manuales (Semana 1)
